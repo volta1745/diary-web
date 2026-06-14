@@ -1,0 +1,13 @@
+{
+  "date": "20201010",
+  "activity": [
+    { "time": "0:00", "label": "Sleep" },
+    { "time": "7:00", "label": "Morning routine" },
+    { "time": "9:00", "label": "Work" },
+    { "time": "12:00", "label": "Lunch" },
+    { "time": "13:00", "label": "Work" },
+    { "time": "18:00", "label": "Free time" }
+  ],
+  "diary": "Today was a productive day. Got a lot of work done in the morning and felt focused throughout.",
+  "condition": "good"
+}
