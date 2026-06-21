@@ -1,0 +1,17 @@
+{
+  "date": "20260616",
+  "activity": [
+    { "time": "5:00", "label": "Sleep" },
+    { "time": "6:00", "label": "None" },
+    { "time": "8:30", "label": "Sleep" },
+    { "time": "8:45", "label": "Life" },
+    { "time": "11:15", "label": "Work" },
+    { "time": "12:45", "label": "Life" },
+    { "time": "18:15", "label": "Work" },
+    { "time": "20:00", "label": "Life" },
+    { "time": "23:00", "label": "Game" },
+    { "time": "24:00", "label": "Sleep" }
+  ],
+  "diary": "Please don't assume that person's reaction is the norm for humans.",
+  "condition": "good"
+}

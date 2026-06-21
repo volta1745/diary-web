@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Diary</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <main class="viewport">
+    <!-- Previous (older) -->
+    <button class="nav nav--prev" id="prevBtn" aria-label="Previous entry">&#10094;</button>
+
+    <div class="book" id="book">
+      <!-- Left page: date + activity timeline + condition -->
+      <section class="page page--left">
+        <header class="page-header">
+          <h1 class="date" id="date">—</h1>
+          <div class="condition-row">
+            <span class="condition-label">Condition</span>
+            <span class="condition-value" id="condition"></span>
+          </div>
+        </header>
+        <ul class="activity" id="activity"></ul>
+      </section>
+
+      <div class="book-spine" aria-hidden="true"></div>
+
+      <!-- Right page: diary text -->
+      <section class="page page--right">
+        <header class="page-header page-header--right">
+          <span class="page-label">Diary</span>
+        </header>
+        <div class="diary" id="diary"></div>
+      </section>
+    </div>
+
+    <!-- Next (newer) -->
+    <button class="nav nav--next" id="nextBtn" aria-label="Next entry">&#10095;</button>
+  </main>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

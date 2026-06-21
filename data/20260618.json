@@ -1,0 +1,14 @@
+{
+  "date": "20260618",
+  "activity": [
+    { "time": "7:30", "label": "Sleep" },
+    { "time": "8:30", "label": "None" },
+    { "time": "11:00", "label": "Work" },
+    { "time": "12:45", "label": "None" },
+    { "time": "19:00", "label": "Work" },
+    { "time": "20:00", "label": "Life" },
+    { "time": "24:00", "label": "Game" }
+  ],
+  "diary": "Give it up! You're trash today—die.",
+  "condition": "Fair"
+}

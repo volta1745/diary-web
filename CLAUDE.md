@@ -46,7 +46,7 @@ Each diary entry lives at `data/YYYYMMDD.json`:
     { "time": "23:30", "label": "Sleep" }
   ],
   "diary": "Text",
-  "condition": "good"
+  "condition": "Poor / Fair / good / Very Good / Excellent"
   }
 ```
 
@@ -84,6 +84,13 @@ After each step is confirmed and complete:
 - [ ] Step 5: Implement the logic
 
 **Next:** Step 3 — Present UI mockup
+
+## Publishing
+
+When the user says **「公開して」** (or "publish" / "deploy"), run the `publish`
+skill: commit all changes and push to the GitHub remote so GitHub Pages updates.
+The site is static with no build step — adding `data/YYYYMMDD.json` files and
+pushing is enough; the app discovers entries by probing dates (no manifest).
 
 ## Out of Scope (for now)
 

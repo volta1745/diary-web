@@ -1,0 +1,16 @@
+{
+  "date": "20260619",
+  "activity": [
+    { "time": "8:00", "label": "Sleep" },
+    { "time": "8:45", "label": "Life" },
+    { "time": "11:00", "label": "Work" },
+    { "time": "13:00", "label": "None" },
+    { "time": "19:30", "label": "Work" },
+    { "time": "20:00", "label": "Go-out" },
+    { "time": "21:30", "label": "Life" },
+    { "time": "23:00", "label": "Game" },
+    { "time": "24:00", "label": "Code" }
+  ],
+  "diary": "I reject everyone who didn't choose me.",
+  "condition": "Fair"
+}

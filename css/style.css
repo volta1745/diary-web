@@ -1,0 +1,267 @@
+/* ---------- Reset / base ---------- */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --paper: #fdf8ef;
+  --paper-edge: #efe6d4;
+  --ink: #3a332a;
+  --ink-soft: #7a7060;
+  --accent: #8a6d3b;
+  --spine: #d9cbb0;
+  --nav-bg: rgba(58, 51, 42, 0.06);
+  --nav-bg-hover: rgba(58, 51, 42, 0.14);
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font-family: "Georgia", "Hiragino Mincho ProN", "Yu Mincho", serif;
+  color: var(--ink);
+  background: #2c2620;
+  overflow: hidden; /* desktop: lock to one screen */
+}
+
+/* ---------- Viewport: fills the whole screen, no fixed px ---------- */
+.viewport {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh; /* mobile dynamic viewport */
+  padding: clamp(0.5rem, 2vw, 2.5rem);
+}
+
+/* ---------- Book spread ---------- */
+.book {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  max-width: 1400px;
+  max-height: 900px;
+  background: var(--paper);
+  border-radius: 6px;
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+}
+
+.page {
+  flex: 1 1 50%;
+  min-width: 0;
+  padding: clamp(1.25rem, 3.5vw, 3rem);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.page--left {
+  background:
+    linear-gradient(to right, var(--paper) 85%, var(--paper-edge));
+}
+.page--right {
+  background:
+    linear-gradient(to left, var(--paper) 85%, var(--paper-edge));
+}
+
+.book-spine {
+  flex: 0 0 2px;
+  background: var(--spine);
+  box-shadow: 0 0 18px 6px rgba(120, 100, 60, 0.25);
+}
+
+/* ---------- Header ---------- */
+.page-header {
+  border-bottom: 1px solid var(--paper-edge);
+  padding-bottom: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+.page-header--right { text-align: right; }
+
+.date {
+  font-size: clamp(1.5rem, 3vw, 2.4rem);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+.condition-row {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-top: 0.7rem;
+}
+.condition-label {
+  font-size: clamp(0.7rem, 1.3vw, 0.82rem);
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  color: var(--ink-soft);
+}
+.condition-value {
+  font-size: clamp(1rem, 1.9vw, 1.2rem);
+  font-weight: 600;
+  padding: 0.25rem 1rem;
+  border-radius: 999px;
+  border: 1.5px solid currentColor;
+  text-transform: capitalize;
+  line-height: 1.25;
+}
+.condition-value.good   { color: #4a7c4e; background: rgba(74, 124, 78, 0.08); }
+.condition-value.fair   { color: #b5882f; background: rgba(181, 136, 47, 0.08); }
+.condition-value.bad    { color: #8b3a3a; background: rgba(139, 58, 58, 0.08); }
+.condition-value.normal { color: var(--ink-soft); background: rgba(122, 112, 96, 0.08); }
+
+.page-label {
+  font-size: clamp(0.9rem, 1.8vw, 1.15rem);
+  color: var(--accent);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* ---------- Activity timeline (vertical day view) ---------- */
+.activity {
+  list-style: none;
+  flex: 1;                 /* fill remaining page height */
+  display: flex;
+  flex-direction: column;
+  min-height: 24rem;       /* keep proportions sensible on short pages */
+  border-left: 2px solid var(--paper-edge);
+  padding-left: 0;
+}
+.activity .slot {
+  display: flex;
+  align-items: stretch;
+  min-height: 1.6rem;      /* readability floor for tiny segments */
+  position: relative;
+}
+.activity .slot-time {
+  flex: 0 0 3.6rem;
+  text-align: right;
+  padding-right: 0.6rem;
+  color: var(--ink-soft);
+  font-size: clamp(0.72rem, 1.4vw, 0.85rem);
+  font-variant-numeric: tabular-nums;
+  transform: translateY(-0.5em); /* align label to the slot's start line */
+}
+.activity .slot-block {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding: 0.15rem 0.7rem;
+  margin: 1px 0;
+  border-radius: 6px;
+  background: var(--slot-color);
+  color: #fff;
+  font-size: clamp(0.8rem, 1.6vw, 0.98rem);
+  font-weight: 600;
+  line-height: 1.2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12);
+}
+
+/* ---------- Diary text ---------- */
+.diary {
+  flex: 1;
+  font-size: clamp(1rem, 1.9vw, 1.2rem);
+  line-height: 1.9em;
+  white-space: pre-wrap;
+  padding-top: 2px;
+  /* Ruled paper: one line per text row, scrolls with the content */
+  background-image: repeating-linear-gradient(
+    transparent,
+    transparent calc(1.9em - 1px),
+    #ddd3bf calc(1.9em - 1px),
+    #ddd3bf 1.9em
+  );
+  background-attachment: local;
+}
+
+/* ---------- Navigation arrows ---------- */
+.nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  width: clamp(2.4rem, 4vw, 3.4rem);
+  height: clamp(2.4rem, 4vw, 3.4rem);
+  border: none;
+  border-radius: 50%;
+  background: var(--nav-bg);
+  color: #f3ead8;
+  font-size: clamp(1.1rem, 2vw, 1.6rem);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.18s ease, opacity 0.18s ease;
+  backdrop-filter: blur(2px);
+}
+.nav:hover { background: var(--nav-bg-hover); }
+.nav--prev { left: clamp(0.4rem, 1.5vw, 1.5rem); }
+.nav--next { right: clamp(0.4rem, 1.5vw, 1.5rem); }
+.nav:disabled { opacity: 0.25; cursor: default; }
+
+/* ---------- Mobile: single page, stacked, swipe ---------- */
+@media (max-width: 768px) {
+  body { overflow: auto; }
+
+  .viewport {
+    padding: 0;
+    align-items: stretch;
+    height: auto;
+    min-height: 100dvh;
+  }
+
+  .book {
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    min-height: 100dvh;
+    max-width: none;
+    max-height: none;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .page {
+    flex: 0 0 auto;
+    overflow: visible;
+    padding: 1.5rem 1.25rem;
+  }
+  .page--left,
+  .page--right { background: var(--paper); }
+
+  .book-spine {
+    flex: 0 0 1px;
+    height: 1px;
+    width: 100%;
+    box-shadow: none;
+    background: var(--paper-edge);
+  }
+
+  .page-header--right { text-align: left; }
+
+  /* Arrows become fixed bottom controls, thumb-friendly */
+  .nav {
+    position: fixed;
+    top: auto;
+    bottom: 1rem;
+    transform: none;
+    width: 3rem;
+    height: 3rem;
+    background: rgba(58, 51, 42, 0.55);
+  }
+  .nav--prev { left: 1rem; }
+  .nav--next { right: 1rem; }
+
+  .date { font-size: 1.6rem; }
+  .diary { font-size: 1.05rem; }
+}
+
+/* Smooth date transitions */
+.book.is-changing { opacity: 0.35; transition: opacity 0.12s ease; }
+.book { transition: opacity 0.18s ease; }
