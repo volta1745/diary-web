@@ -2,7 +2,6 @@
   "date": "20260614",
   "activity": [
     { "time": "9:00", "label": "Sleep" },
-    { "time": "1:30", "label": "Code" },
     { "time": "10:00", "label": "Life" },
     { "time": "13:00", "label": "Code" },
     { "time": "14:00", "label": "Life" },

@@ -1,0 +1,20 @@
+{
+  "date": "20260622",
+  "activity": [
+    { "time": "1:30", "label": "Code" },
+    { "time": "2:30", "label": "None" },
+    { "time": "3:30", "label": "Life" },
+    { "time": "4:00", "label": "None" },
+    { "time": "8:30", "label": "Sleep" },
+    { "time": "12:30", "label": "Work" },
+    { "time": "13:00", "label": "Life" },
+    { "time": "14:00", "label": "Work" },
+    { "time": "14:30", "label": "Life" },
+    { "time": "18:00", "label": "Work" },
+    { "time": "20:00", "label": "Sleep" },
+    { "time": "22:00", "label": "Life" },
+    { "time": "24:00", "label": "Game" }
+  ],
+  "diary": "Which is true me?",
+  "condition": "Poor"
+}

@@ -1,0 +1,17 @@
+{
+  "date": "20260625",
+  "activity": [
+    { "time": "8:30", "label": "Sleep" },
+    { "time": "9:00", "label": "Life" },
+    { "time": "12:00", "label": "Work" },
+    { "time": "13:00", "label": "Life" },
+    { "time": "17:30", "label": "Work" },
+    { "time": "18:30", "label": "Game" },
+    { "time": "21:00", "label": "Sleep" },
+    { "time": "22:30", "label": "Life" },
+    { "time": "23:30", "label": "None" },
+    { "time": "24:00", "label": "Happy" }
+  ],
+  "diary": "",
+  "condition": "Excellent"
+}

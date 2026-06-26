@@ -1,0 +1,16 @@
+{
+  "date": "20260624",
+  "activity": [
+    { "time": "1:00", "label": "Sleep" },
+    { "time": "1:45", "label": "None" },
+    { "time": "8:45", "label": "Life" },
+    { "time": "11:00", "label": "Work" },
+    { "time": "11:30", "label": "Life" },
+    { "time": "19:30", "label": "Work" },
+    { "time": "21:00", "label": "Life" },
+    { "time": "23:30", "label": "None" },
+    { "time": "24:00", "label": "Sleep" }
+  ],
+  "diary": "It’s okay to have had a moment in your life when you wanted to get to know someone a little better, right?",
+  "condition": "Poor"
+}
