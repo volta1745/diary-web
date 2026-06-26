@@ -12,26 +12,26 @@
     <button class="nav nav--prev" id="prevBtn" aria-label="Previous entry">&#10094;</button>
 
     <div class="book" id="book">
-      <!-- Left page: date + activity timeline + condition -->
+      <!-- Left page: date + activity timeline -->
       <section class="page page--left">
         <header class="page-header">
           <h1 class="date" id="date">—</h1>
-          <div class="condition-row">
-            <span class="condition-label">Condition</span>
-            <span class="condition-value" id="condition"></span>
-          </div>
         </header>
         <ul class="activity" id="activity"></ul>
       </section>
 
       <div class="book-spine" aria-hidden="true"></div>
 
-      <!-- Right page: diary text -->
+      <!-- Right page: highlights + condition -->
       <section class="page page--right">
         <header class="page-header page-header--right">
-          <span class="page-label">Diary</span>
+          <span class="page-label">Highlights</span>
         </header>
-        <div class="diary" id="diary"></div>
+        <ul class="highlights" id="highlights"></ul>
+        <div class="condition-row condition-row--right">
+          <span class="condition-label">Condition</span>
+          <span class="condition-value" id="condition"></span>
+        </div>
       </section>
     </div>
 

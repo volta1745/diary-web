@@ -6,7 +6,7 @@
     date: document.getElementById("date"),
     condition: document.getElementById("condition"),
     activity: document.getElementById("activity"),
-    diary: document.getElementById("diary"),
+    highlights: document.getElementById("highlights"),
     prev: document.getElementById("prevBtn"),
     next: document.getElementById("nextBtn"),
   };
@@ -71,19 +71,17 @@
   const END_OF_DAY = 24 * 60; // minutes
   const MIN_BLOCK = 15;       // minutes — keeps tiny segments readable
 
-  // Stable color per label (explicit palette + hashed fallback)
+  // Stable color per label (explicit palette + hashed fallback).
+  // Palette matches the canonical Activity Labels in CLAUDE.md; any other
+  // label (e.g. legacy "Happy") falls back to a hashed hue.
   const LABEL_COLORS = {
     Sleep: "#5b6bb5",
-    Code: "#2f9e8f",
     Work: "#e07a5f",
+    Code: "#2f9e8f",
     Life: "#c9a26b",
-    "Go-out": "#e8995e",
     Game: "#9b6bb5",
-    Study: "#4b89c4",
-    Lunch: "#e0b94f",
-    Rest: "#6aa86a",
-    "Morning routine": "#e8a06a",
-    "Free time": "#4fb0c4",
+    "Go-out": "#e8995e",
+    Transit: "#7ba0c4",
     None: "#cdc4b4",
   };
   function colorFor(label) {
@@ -135,6 +133,44 @@
     });
   }
 
+  // Highlights (right page). Sorted by value in signed-descending order
+  // (most positive first, most negative last). Magnitude is conveyed only by
+  // sign + sort order; each item gets a single-character sign marker.
+  function renderHighlights(highlights = []) {
+    el.highlights.innerHTML = "";
+    const items = (highlights || []).filter((h) => h && h.value != null);
+
+    if (items.length === 0) {
+      const li = document.createElement("li");
+      li.className = "highlight highlight--empty";
+      li.textContent = "No highlights.";
+      el.highlights.appendChild(li);
+      return;
+    }
+
+    items.sort((a, b) => Number(b.value) - Number(a.value));
+
+    items.forEach((h) => {
+      const v = Number(h.value) || 0;
+      const sign = v > 0 ? "pos" : v < 0 ? "neg" : "zero";
+
+      const li = document.createElement("li");
+      li.className = "highlight highlight--" + sign;
+
+      const mark = document.createElement("span");
+      mark.className = "highlight-mark";
+      // 0 is defensive only — neutral events belong in activity.value.
+      mark.textContent = v > 0 ? "+" : v < 0 ? "−" : "●";
+
+      const note = document.createElement("span");
+      note.className = "highlight-note";
+      note.textContent = h.note ?? "";
+
+      li.append(mark, note);
+      el.highlights.appendChild(li);
+    });
+  }
+
   // Map a condition value to a color class (handles the 5-level diary scale
   // plus loose values like "good" / "normal" / "bad").
   function conditionClass(cond) {
@@ -150,8 +186,8 @@
     el.date.textContent = formatDate(ymd);
     el.condition.textContent = data.condition ?? "";
     el.condition.className = "condition-value " + conditionClass(data.condition);
-    el.diary.textContent = data.diary ?? "";
     renderActivity(data.activity);
+    renderHighlights(data.highlights);
     window.scrollTo({ top: 0 });
     refreshNav();
   }
@@ -220,7 +256,7 @@
     if (found) {
       render(found.ymd, found.data);
     } else {
-      el.diary.textContent = "No diary entries yet.";
+      el.highlights.textContent = "No diary entries yet.";
     }
   }
 

@@ -7,10 +7,15 @@
     { "time": "12:00", "label": "Work" },
     { "time": "13:00", "label": "Life" },
     { "time": "16:00", "label": "Work" },
-    { "time": "18:45", "label": "None" },
-    { "time": "23:30", "label": "None" },
-    { "time": "24:00", "label": "Sleep" }
+    { "time": "19:45", "label": "None" },
+    { "time": "20:15", "label": "Life" },
+    { "time": "23:00", "label": "None" },
+    { "time": "24:00", "label": "Code", "value": 0 }
   ],
-  "diary": "It’s okay to have had a moment in your life when you wanted to get to know someone a little better, right?",
-  "condition": "Poor"
+  "highlights": [
+    { "value": -1, "note": "I don't wanna wake up." },
+    { "value": 1, "note": "The Siberian bread was delicious." },
+    { "value": -2, "note": "I just couldn't seem to muster the energy to work today either." }
+  ],
+  "condition": "Fair"
 }
