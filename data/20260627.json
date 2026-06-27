@@ -1,0 +1,22 @@
+{
+  "date": "20260627",
+  "activity": [
+    { "time": "1:00", "label": "Code", "value": 0 },
+    { "time": "9:15", "label": "Sleep" },
+    { "time": "9:30", "label": "Life" },
+    { "time": "11:15", "label": "Code", "value": 2 },
+    { "time": "12:30", "label": "Hobby" },
+    { "time": "14:00", "label": "Code", "value": 2 },
+    { "time": "14:30", "label": "Life" },
+    { "time": "15:00", "label": "None" },
+    { "time": "15:15", "label": "Life" },
+    { "time": "23:00", "label": "None" },
+    { "time": "24:00", "label": "Code", "value": 0 }
+  ],
+  "highlights": [
+    { "value": 2, "note": "I was able to decide Eudaimon Official." },
+    { "value": 1, "note": "I enjoyed shadowing." },
+    { "value": -1, "note": "" }
+  ],
+  "condition": "Very Good"
+}

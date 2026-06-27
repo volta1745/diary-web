@@ -10,7 +10,7 @@
     { "time": "16:30", "label": "Life" },
     { "time": "19:00", "label": "Work" },
     { "time": "21:15", "label": "Sleep" },
-    { "time": "23:30", "label": "Game" },
+    { "time": "23:30", "label": "Hobby" },
     { "time": "24:00", "label": "None" }
   ],
   "diary": "Låt oss upprepa samma dagar.",

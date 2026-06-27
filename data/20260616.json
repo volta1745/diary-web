@@ -9,7 +9,7 @@
     { "time": "12:45", "label": "Life" },
     { "time": "18:15", "label": "Work" },
     { "time": "20:00", "label": "Life" },
-    { "time": "23:00", "label": "Game" },
+    { "time": "23:00", "label": "Hobby" },
     { "time": "24:00", "label": "Sleep" }
   ],
   "diary": "Please don't assume that person's reaction is the norm for humans.",

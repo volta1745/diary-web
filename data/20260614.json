@@ -9,7 +9,7 @@
     { "time": "16:30", "label": "Life" },
     { "time": "18:00", "label": "Work" },
     { "time": "18:30", "label": "None" },
-    { "time": "19:30", "label": "Game" },
+    { "time": "19:30", "label": "Hobby" },
     { "time": "20:15", "label": "Life" },
     { "time": "22:30", "label": "Code" },
     { "time": "24:00", "label": "Sleep" }

@@ -7,8 +7,13 @@
     condition: document.getElementById("condition"),
     activity: document.getElementById("activity"),
     highlights: document.getElementById("highlights"),
+    euScore: document.getElementById("euScore"),
+    euTerms: document.getElementById("euTerms"),
     prev: document.getElementById("prevBtn"),
     next: document.getElementById("nextBtn"),
+    infoBtn: document.getElementById("infoBtn"),
+    modal: document.getElementById("formulaModal"),
+    modalClose: document.getElementById("modalClose"),
   };
 
   const SCAN_LIMIT = 366; // stop after ~1 year of empty days in one direction
@@ -72,18 +77,20 @@
   const MIN_BLOCK = 15;       // minutes — keeps tiny segments readable
 
   // Stable color per label (explicit palette + hashed fallback).
-  // Palette matches the canonical Activity Labels in CLAUDE.md; any other
-  // label (e.g. legacy "Happy") falls back to a hashed hue.
+  // Canonical palette per CLAUDE.md: Sleep green, Work red, Code purple,
+  // Life amber, Hobby blue, Go-out teal, Transit/None gray. Any other label
+  // (e.g. legacy "Happy" / retired "Game") falls back to a hashed hue.
   const LABEL_COLORS = {
-    Sleep: "#5b6bb5",
-    Work: "#e07a5f",
-    Code: "#2f9e8f",
-    Life: "#c9a26b",
-    Game: "#9b6bb5",
-    "Go-out": "#e8995e",
-    Transit: "#7ba0c4",
-    None: "#cdc4b4",
+    Sleep: "#5f9e6e",
+    Work: "#cf6450",
+    Code: "#8a6bb5",
+    Life: "#c79a3a",
+    Hobby: "#4f7cc4",
+    "Go-out": "#2f9e8f",
+    Transit: "#9a9486",
+    None: "#c2bbac",
   };
+  const HIGHLIGHT_COLOR = "#c96a8e"; // pink — Eudaimon highlights term
   function colorFor(label) {
     if (LABEL_COLORS[label]) return LABEL_COLORS[label];
     let h = 0;
@@ -96,26 +103,48 @@
     return (h || 0) * 60 + (m || 0);
   }
 
-  // Vertical day timeline. Each `time` is the END of that activity; the
-  // activity starts where the previous one ended (the first starts at 0:00).
-  //   { "1:00", Life }  -> 0:00–1:00 Life
-  //   { "11:00", Sleep } -> 1:00–11:00 Sleep   ... etc.
-  function renderActivity(activity = []) {
-    el.activity.innerHTML = "";
-    const acts = activity.filter((a) => a && a.time != null);
+  // Field renamed `value` -> `valence`; tolerate old `value` for legacy data.
+  function valenceOf(item) {
+    const v = item && (item.valence != null ? item.valence : item.value);
+    return v == null ? null : Number(v);
+  }
 
-    let prevEnd = 0;       // start of day, 0:00 (minutes)
-    let startLabel = "0:00";
-
+  // Parse the activity list into time blocks (END-semantics): each `time` is
+  // the end of its block; the first block starts at 0:00. Crossing midnight is
+  // detected when a time is <= the previous end.
+  function parseBlocks(activity = []) {
+    const acts = (activity || []).filter((a) => a && a.time != null);
+    const blocks = [];
+    let prevEnd = 0; // start of day, 0:00 (minutes)
     acts.forEach((item) => {
       let end = toMinutes(item.time);
       if (end <= prevEnd) end += END_OF_DAY; // crossed midnight
-      const duration = Math.max(end - prevEnd, MIN_BLOCK);
+      blocks.push({
+        label: item.label,
+        startMin: prevEnd,
+        endMin: end,
+        hours: (end - prevEnd) / 60,
+        valence: valenceOf(item),
+      });
+      prevEnd = end;
+    });
+    return blocks;
+  }
+
+  // Vertical day timeline. Each block runs from the previous block's end up to
+  // its own `time`; the first block starts at 0:00.
+  function renderActivity(activity = []) {
+    el.activity.innerHTML = "";
+    const blocks = parseBlocks(activity);
+    let startLabel = "0:00";
+
+    blocks.forEach((b) => {
+      const duration = Math.max(b.endMin - b.startMin, MIN_BLOCK);
 
       const li = document.createElement("li");
       li.className = "slot";
       li.style.flexGrow = String(duration);
-      li.style.setProperty("--slot-color", colorFor(item.label));
+      li.style.setProperty("--slot-color", colorFor(b.label));
 
       const time = document.createElement("span");
       time.className = "slot-time";
@@ -123,22 +152,26 @@
 
       const block = document.createElement("span");
       block.className = "slot-block";
-      block.textContent = item.label ?? "";
+      block.textContent = b.label ?? "";
 
       li.append(time, block);
       el.activity.appendChild(li);
 
-      prevEnd = end;
-      startLabel = item.time; // next block starts where this one ended
+      // next block starts where this one ended (minutes -> H:MM)
+      const endH = Math.floor(b.endMin / 60);
+      const endM = b.endMin % 60;
+      startLabel = `${endH}:${String(endM).padStart(2, "0")}`;
     });
   }
 
-  // Highlights (right page). Sorted by value in signed-descending order
-  // (most positive first, most negative last). Magnitude is conveyed only by
-  // sign + sort order; each item gets a single-character sign marker.
+  // Highlights (top region of right page). Sorted by valence in signed-
+  // descending order (most positive first, most negative last). Magnitude is
+  // conveyed only by sign + sort order; each item gets a sign marker.
   function renderHighlights(highlights = []) {
     el.highlights.innerHTML = "";
-    const items = (highlights || []).filter((h) => h && h.value != null);
+    const items = (highlights || [])
+      .map((h) => ({ valence: valenceOf(h), note: h && h.note }))
+      .filter((h) => h.valence != null);
 
     if (items.length === 0) {
       const li = document.createElement("li");
@@ -148,10 +181,10 @@
       return;
     }
 
-    items.sort((a, b) => Number(b.value) - Number(a.value));
+    items.sort((a, b) => b.valence - a.valence);
 
     items.forEach((h) => {
-      const v = Number(h.value) || 0;
+      const v = h.valence || 0;
       const sign = v > 0 ? "pos" : v < 0 ? "neg" : "zero";
 
       const li = document.createElement("li");
@@ -159,7 +192,7 @@
 
       const mark = document.createElement("span");
       mark.className = "highlight-mark";
-      // 0 is defensive only — neutral events belong in activity.value.
+      // 0 is defensive only — neutral events belong in activity.valence.
       mark.textContent = v > 0 ? "+" : v < 0 ? "−" : "●";
 
       const note = document.createElement("span");
@@ -168,6 +201,128 @@
 
       li.append(mark, note);
       el.highlights.appendChild(li);
+    });
+  }
+
+  // ---- Eudaimon score (v0.1) ----
+  const OMEGA_WORK = { 0: -0.20, 1: 0.00, 2: 0.15 };
+  const OMEGA_CODE = { 0: 0.08, 1: 0.15, 2: 0.30 };
+
+  function sumHours(blocks, label) {
+    return blocks
+      .filter((b) => b.label === label)
+      .reduce((s, b) => s + b.hours, 0);
+  }
+
+  // ω lookup: missing valence -> 1; clamp to the table domain {0,1,2}.
+  function omega(table, valence) {
+    const v = valence == null ? 1 : valence;
+    const k = Math.max(0, Math.min(2, Math.round(v)));
+    return table[k];
+  }
+
+  function workCodeTerm(blocks, label, table) {
+    return blocks
+      .filter((b) => b.label === label)
+      .reduce((s, b) => s + b.hours * omega(table, b.valence), 0);
+  }
+
+  // bedtime(d): start (hours, possibly >= 24) of the longest contiguous Sleep
+  // block whose start falls within [12:00, 36:00). Returns null if none.
+  function bedtimeOf(blocks) {
+    let best = null;
+    blocks.forEach((b) => {
+      if (b.label !== "Sleep") return;
+      const startH = b.startMin / 60;
+      if (startH < 12 || startH >= 36) return;
+      if (!best || b.hours > best.hours) best = b;
+    });
+    return best ? best.startMin / 60 : null;
+  }
+
+  function circDistance(a, b) {
+    const d = Math.abs(a - b) % 24;
+    return Math.min(d, 24 - d);
+  }
+
+  function computeEudaimon(blocks, highlights, prevBedtime) {
+    const sleep = sumHours(blocks, "Sleep");
+    const life = sumHours(blocks, "Life");
+    const hobby = sumHours(blocks, "Hobby");
+    const goout = sumHours(blocks, "Go-out");
+    const transit = sumHours(blocks, "Transit");
+    const none = sumHours(blocks, "None");
+
+    const hobbyTerm = 1.0 * Math.min(hobby, 1) - 0.40 * Math.max(0, hobby - 1);
+
+    const hi = (highlights || [])
+      .map(valenceOf)
+      .filter((v) => v != null)
+      .reduce((s, v) => s + v, 0);
+
+    const bedtime = bedtimeOf(blocks);
+    let shift = 0;
+    if (bedtime != null && prevBedtime != null) {
+      shift = -0.15 * Math.max(0, circDistance(bedtime, prevBedtime) - 1.0);
+    }
+
+    const terms = [
+      { key: "base",       color: "var(--ink-soft)",  value: 3.0 },
+      { key: "Sleep",      color: colorFor("Sleep"),  value: -0.20 * Math.abs(sleep - 7.5) },
+      { key: "Work",       color: colorFor("Work"),   value: workCodeTerm(blocks, "Work", OMEGA_WORK) },
+      { key: "Code",       color: colorFor("Code"),   value: workCodeTerm(blocks, "Code", OMEGA_CODE) },
+      { key: "Life",       color: colorFor("Life"),   value: -0.08 * life },
+      { key: "Hobby",      color: colorFor("Hobby"),  value: hobbyTerm },
+      { key: "Go-out",     color: colorFor("Go-out"), value: 0.15 * goout },
+      { key: "Transit",    color: colorFor("Transit"),value: -0.05 * transit },
+      { key: "None",       color: colorFor("None"),   value: -0.35 * none },
+      { key: "shift",      color: colorFor("Sleep"),  value: shift },
+      { key: "Highlights", color: HIGHLIGHT_COLOR,    value: hi },
+    ];
+    const total = terms.reduce((s, t) => s + t.value, 0);
+    return { terms, total };
+  }
+
+  function fmtSigned(v) {
+    const sign = v >= 0 ? "+" : "−";
+    return sign + Math.abs(v).toFixed(2);
+  }
+
+  // Bottom region of the right page: per-term breakdown + final E_day.
+  // Needs the previous calendar day's bedtime for the phase-shift term.
+  async function renderEudaimon(ymd, data) {
+    const blocks = parseBlocks(data.activity);
+    const prev = await loadEntry(shiftYmd(ymd, -1));
+    if (ymd !== currentYmd) return; // navigated away while awaiting
+    const prevBedtime = prev ? bedtimeOf(parseBlocks(prev.activity)) : null;
+
+    const { terms, total } = computeEudaimon(blocks, data.highlights, prevBedtime);
+
+    el.euScore.textContent = total.toFixed(2);
+
+    const list = el.euTerms;
+    list.innerHTML = "";
+    terms.forEach((t) => {
+      // hide terms that contribute nothing (except the base offset)
+      if (t.key !== "base" && Math.abs(t.value) < 0.005) return;
+
+      const chip = document.createElement("span");
+      chip.className = "eu-term";
+
+      const dot = document.createElement("span");
+      dot.className = "eu-dot";
+      dot.style.background = t.color;
+
+      const name = document.createElement("span");
+      name.className = "eu-name";
+      name.textContent = t.key;
+
+      const val = document.createElement("span");
+      val.className = "eu-val";
+      val.textContent = t.key === "base" ? t.value.toFixed(2) : fmtSigned(t.value);
+
+      chip.append(dot, name, val);
+      list.appendChild(chip);
     });
   }
 
@@ -188,6 +343,7 @@
     el.condition.className = "condition-value " + conditionClass(data.condition);
     renderActivity(data.activity);
     renderHighlights(data.highlights);
+    renderEudaimon(ymd, data); // async — settles the bottom panel
     window.scrollTo({ top: 0 });
     refreshNav();
   }
@@ -220,11 +376,26 @@
   const older = () => step(-1);
   const newer = () => step(+1);
 
+  // ---- Formula modal ----
+  function openModal() { el.modal.hidden = false; }
+  function closeModal() { el.modal.hidden = true; }
+  function bindModal() {
+    el.infoBtn.addEventListener("click", openModal);
+    el.modalClose.addEventListener("click", closeModal);
+    // click outside the dialog closes (body scroll is not locked)
+    el.modal.addEventListener("click", (e) => {
+      if (e.target === el.modal) closeModal();
+    });
+  }
+
   function bindEvents() {
     el.prev.addEventListener("click", older);
     el.next.addEventListener("click", newer);
+    bindModal();
 
     document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") { closeModal(); return; }
+      if (!el.modal.hidden) return; // don't navigate while the modal is open
       if (e.key === "ArrowLeft") older();
       else if (e.key === "ArrowRight") newer();
     });

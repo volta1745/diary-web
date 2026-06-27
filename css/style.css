@@ -64,8 +64,26 @@ body {
     linear-gradient(to right, var(--paper) 85%, var(--paper-edge));
 }
 .page--right {
+  position: relative;
   background:
     linear-gradient(to left, var(--paper) 85%, var(--paper-edge));
+}
+
+/* Right page split: top ~2/3 (highlights + condition), bottom ~1/3 (Eudaimon) */
+.right-top {
+  flex: 2 1 0;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+.right-bottom {
+  flex: 1 1 0;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  margin-top: 0.9rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--paper-edge);
 }
 
 .book-spine {
@@ -197,13 +215,145 @@ body {
   font-style: italic;
 }
 
-/* Condition pinned to the bottom of the right page */
+/* Condition pinned to the bottom of the top region */
 .condition-row--right {
   margin-top: auto;
   padding-top: 1rem;
   justify-content: flex-end;
   border-top: 1px solid var(--paper-edge);
 }
+
+/* ---------- Eudaimon panel (bottom region of right page) ---------- */
+.eudaimon {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  height: 100%;
+}
+.eu-head {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.55rem;
+}
+.eu-title {
+  font-size: clamp(0.66rem, 1.2vw, 0.78rem);
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  color: var(--ink-soft);
+}
+.eu-score { margin-left: auto; }
+.eu-score {
+  font-size: clamp(1.3rem, 2.6vw, 1.9rem);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: var(--ink);
+}
+.eu-terms {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem 0.45rem;
+  align-content: flex-start;
+  overflow-y: auto;
+}
+.eu-term {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.34rem;
+  padding: 0.16rem 0.5rem;
+  border-radius: 999px;
+  background: rgba(58, 51, 42, 0.04);
+  border: 1px solid var(--paper-edge);
+  font-size: clamp(0.66rem, 1.25vw, 0.8rem);
+  line-height: 1.1;
+}
+.eu-dot {
+  width: 0.62em;
+  height: 0.62em;
+  border-radius: 50%;
+  flex: 0 0 auto;
+}
+.eu-name { color: var(--ink-soft); }
+.eu-val {
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: var(--ink);
+}
+
+/* ---------- Formula info icon + modal ---------- */
+.info-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: 1.15rem;
+  height: 1.15rem;
+  padding: 0;
+  border: 1.5px solid var(--accent);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--accent);
+  font-family: "Georgia", serif;
+  font-style: italic;
+  font-size: 0.78rem;
+  font-weight: 700;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+.info-btn:hover {
+  background: var(--accent);
+  color: var(--paper);
+}
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+  background: rgba(28, 22, 16, 0.55);
+  backdrop-filter: blur(2px);
+}
+.modal-overlay[hidden] { display: none; }
+.modal {
+  position: relative;
+  max-width: min(92vw, 560px);
+  max-height: 86vh;
+  overflow: auto;
+  padding: 1.6rem 1.8rem;
+  background: var(--paper);
+  border-radius: 8px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+.modal-title {
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-bottom: 0.9rem;
+  color: var(--ink);
+}
+.modal .formula {
+  font-family: "SFMono-Regular", "Menlo", "Consolas", monospace;
+  font-size: clamp(0.7rem, 1.5vw, 0.85rem);
+  line-height: 1.5;
+  white-space: pre;
+  overflow-x: auto;
+  color: var(--ink);
+}
+.modal-close {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.8rem;
+  border: none;
+  background: transparent;
+  color: var(--ink-soft);
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+}
+.modal-close:hover { color: var(--ink); }
 
 /* ---------- Navigation arrows ---------- */
 .nav {
@@ -270,6 +420,12 @@ body {
 
   .page-header--right { text-align: left; }
   .condition-row--right { justify-content: flex-start; }
+
+  /* Right page stacks naturally; drop the fixed 2:1 height split */
+  .right-top,
+  .right-bottom { flex: 0 0 auto; }
+  .eudaimon { height: auto; }
+  .eu-terms { overflow: visible; }
 
   /* Arrows become fixed bottom controls, thumb-friendly */
   .nav {

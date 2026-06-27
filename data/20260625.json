@@ -6,7 +6,7 @@
     { "time": "12:00", "label": "Work" },
     { "time": "13:00", "label": "Life" },
     { "time": "17:30", "label": "Work" },
-    { "time": "18:30", "label": "Game" },
+    { "time": "18:30", "label": "Hobby" },
     { "time": "21:00", "label": "Sleep" },
     { "time": "22:30", "label": "Life" },
     { "time": "23:30", "label": "None" },

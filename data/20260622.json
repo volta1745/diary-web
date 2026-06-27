@@ -13,7 +13,7 @@
     { "time": "18:00", "label": "Work" },
     { "time": "20:00", "label": "Sleep" },
     { "time": "22:00", "label": "Life" },
-    { "time": "24:00", "label": "Game" }
+    { "time": "24:00", "label": "Hobby" }
   ],
   "diary": "Which is true me?",
   "condition": "Poor"
