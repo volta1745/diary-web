@@ -36,13 +36,13 @@ Each entry lives at `data/YYYYMMDD.json`:
   "activity": [
     { "time": "8:30",  "label": "Sleep" },
     { "time": "9:00",  "label": "Life" },
-    { "time": "12:00", "label": "Work", "valence": 1 },
+    { "time": "12:00", "label": "Work", "value": 1 },
     { "time": "17:30", "label": "Transit" },
     { "time": "18:00", "label": "Go-out" },
-    { "time": "24:00", "label": "Code", "valence": 2 }
+    { "time": "24:00", "label": "Code", "value": 2 }
   ],
   "highlights": [
-    { "valence": 4, "note": "saw the sunset clearly" }
+    { "value": 2, "note": "saw the sunset clearly" }
   ],
   "condition": "Poor / Fair / Good / Very Good / Excellent"
 }
@@ -56,16 +56,23 @@ Each entry lives at `data/YYYYMMDD.json`:
   block's `time` (the first block starts at 0:00) up to its own `time`.
   - `time` (string, required): End time of the block, `H:MM` or `HH:MM`.
   - `label` (string, required): Activity category. See *Activity Labels*.
-  - `valence` (integer, optional): `-5` to `+5`. How positive or negative
-    this block felt. `0` or omitted = neutral. Recommended for `Work`;
-    optional for other labels.
+  - `value` (integer, optional): `0`, `1`, or `2` — how good the block felt
+    (`0` = neutral, `1` = good, `2` = very good). **Only `Work` and `Code`
+    blocks carry a `value`; omit it for every other label.** A `Work`/`Code`
+    block with no `value` is treated as `1`.
+
+    > **Field rename — `valence` → `value`:** an earlier draft of this
+    > schema renamed this field to `valence` with a `-5`–`+5` range. That
+    > rename was reverted: the field is `value`, and every JSON file uses
+    > `value`. The `valence` name is retired and should never appear in a
+    > data file.
 - **`highlights`** (array, optional): Notable events of the day,
   independent of duration. A 3-minute event can be a highlight.
-  - `valence` (integer, required): `-5` to `-1`, or `+1` to `+5`.
-    `0` should not be written — a neutral event is not a highlight by
-    definition; record it as `activity.valence` instead. The UI must
-    nonetheless render `0` gracefully (see *UI / UX Rules*) so that
-    legacy or mistyped entries do not break the page.
+  - `value` (integer, required): one of `-2`, `-1`, `+1`, `+2` (four levels).
+    `0` is not allowed — a neutral event is not a highlight by definition;
+    record it as `activity.value` instead. The UI must nonetheless render
+    `0` gracefully (see *UI / UX Rules*) so that legacy or mistyped entries
+    do not break the page.
   - `note` (string, optional): Short free-form description. May be empty
     if you want to log the spike without writing about it yet.
 - **`condition`** (string, required): Overall day rating.
@@ -80,8 +87,8 @@ analysable.
 | Label     | Meaning                                                                 |
 |-----------|-------------------------------------------------------------------------|
 | `Sleep`   | Sleeping.                                                               |
-| `Work`    | Job work. `valence` recommended (often mixed positive/negative).        |
-| `Code`    | Personal coding / side projects.                                        |
+| `Work`    | Job work. Carries a `value` (`0`–`2`).                                  |
+| `Code`    | Personal coding / side projects. Carries a `value` (`0`–`2`).           |
 | `Life`    | Daily upkeep: meals, hygiene, chores.                                   |
 | `Hobby`   | Personal pastimes including gaming (renamed from `Game`).               |
 | `Go-out`  | Outside the home with a destination or purpose (not transit).           |
@@ -89,7 +96,7 @@ analysable.
 | `None`    | Unaccounted / unclear. Aim to minimize over time.                       |
 
 The previous `Happy` label is removed. Log enjoyable moments as a
-`highlights` entry with positive `valence` — this decouples emotional
+`highlights` entry with positive `value` — this decouples emotional
 peaks from duration, since a short event can matter more than a long one.
 
 **Label history — `Game` → `Hobby`**: The `Game` label was renamed to
@@ -162,12 +169,12 @@ range of `condition` (1–5) seen so far; expect refits as data grows.
   what the bottom region is showing. The modal closes on click-outside
   or Escape. Body scroll is not locked.
 - **Highlights rendering** (top region of right page):
-  - Sorted by `valence` in **signed descending order** (most positive
-    first, most negative last). `+5, +2, -1, -3` is the correct order.
+  - Sorted by `value` in **signed descending order** (most positive
+    first, most negative last). `+2, +1, -1, -2` is the correct order.
   - Each item is prefixed with a single-character sign marker:
-    - `valence > 0` → `+`
-    - `valence < 0` → `-`
-    - `valence == 0` → `●` (standard black bullet; defensive case only —
+    - `value > 0` → `+`
+    - `value < 0` → `-`
+    - `value == 0` → `●` (standard black bullet; defensive case only —
       `0` is not expected in valid highlights, see *JSON Schema*)
   - Magnitude is not shown numerically; only sign + sort order convey it.
 - PC: left/right arrow buttons on the sides of the spread to navigate
@@ -228,5 +235,5 @@ entries by probing dates (no manifest).
 
 Include dummy JSON files under `data/` to verify page navigation
 behavior. At least one dummy file should exercise each of:
-`activity.valence`, `highlights` with positive and negative valence,
+`activity.value`, `highlights` with positive and negative value,
 and an empty `highlights` array.

@@ -61,15 +61,15 @@
       <h2 class="modal-title">Eudaimon score — v0.1</h2>
 <pre class="formula">E_day = 3.0
       − 0.20 · |sleep_hours − 7.5|
-      + Σ_work  hours · ω_work[valence]
-      + Σ_code  hours · ω_code[valence]
+      + Σ_work  hours · ω_work[value]
+      + Σ_code  hours · ω_code[value]
       − 0.08 · life_hours
       + 1.00 · min(hobby_hours, 1) − 0.40 · max(0, hobby_hours − 1)
       + 0.15 · goout_hours
       − 0.05 · transit_hours
       − 0.35 · none_hours
       − 0.15 · max(0, circ_distance(bedtime(d), bedtime(d−1)) − 1.0)
-      + Σ highlights[i].valence
+      + Σ highlights[i].value
 
 ω_work = { 0: −0.20, 1: 0.00, 2: +0.15 }
 ω_code = { 0: +0.08, 1: +0.15, 2: +0.30 }   (missing → 1)

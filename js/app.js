@@ -103,9 +103,10 @@
     return (h || 0) * 60 + (m || 0);
   }
 
-  // Field renamed `value` -> `valence`; tolerate old `value` for legacy data.
-  function valenceOf(item) {
-    const v = item && (item.valence != null ? item.valence : item.value);
+  // Canonical field is `value` (Work/Code blocks: 0–2; highlights: ±1/±2).
+  // Tolerate a legacy `valence` alias defensively.
+  function readValue(item) {
+    const v = item && (item.value != null ? item.value : item.valence);
     return v == null ? null : Number(v);
   }
 
@@ -124,7 +125,7 @@
         startMin: prevEnd,
         endMin: end,
         hours: (end - prevEnd) / 60,
-        valence: valenceOf(item),
+        value: readValue(item),
       });
       prevEnd = end;
     });
@@ -164,14 +165,14 @@
     });
   }
 
-  // Highlights (top region of right page). Sorted by valence in signed-
+  // Highlights (top region of right page). Sorted by value in signed-
   // descending order (most positive first, most negative last). Magnitude is
   // conveyed only by sign + sort order; each item gets a sign marker.
   function renderHighlights(highlights = []) {
     el.highlights.innerHTML = "";
     const items = (highlights || [])
-      .map((h) => ({ valence: valenceOf(h), note: h && h.note }))
-      .filter((h) => h.valence != null);
+      .map((h) => ({ value: readValue(h), note: h && h.note }))
+      .filter((h) => h.value != null);
 
     if (items.length === 0) {
       const li = document.createElement("li");
@@ -181,10 +182,10 @@
       return;
     }
 
-    items.sort((a, b) => b.valence - a.valence);
+    items.sort((a, b) => b.value - a.value);
 
     items.forEach((h) => {
-      const v = h.valence || 0;
+      const v = h.value || 0;
       const sign = v > 0 ? "pos" : v < 0 ? "neg" : "zero";
 
       const li = document.createElement("li");
@@ -192,7 +193,7 @@
 
       const mark = document.createElement("span");
       mark.className = "highlight-mark";
-      // 0 is defensive only — neutral events belong in activity.valence.
+      // 0 is defensive only — neutral events belong in activity.value.
       mark.textContent = v > 0 ? "+" : v < 0 ? "−" : "●";
 
       const note = document.createElement("span");
@@ -214,9 +215,9 @@
       .reduce((s, b) => s + b.hours, 0);
   }
 
-  // ω lookup: missing valence -> 1; clamp to the table domain {0,1,2}.
-  function omega(table, valence) {
-    const v = valence == null ? 1 : valence;
+  // ω lookup: missing value -> 1; clamp to the table domain {0,1,2}.
+  function omega(table, value) {
+    const v = value == null ? 1 : value;
     const k = Math.max(0, Math.min(2, Math.round(v)));
     return table[k];
   }
@@ -224,7 +225,7 @@
   function workCodeTerm(blocks, label, table) {
     return blocks
       .filter((b) => b.label === label)
-      .reduce((s, b) => s + b.hours * omega(table, b.valence), 0);
+      .reduce((s, b) => s + b.hours * omega(table, b.value), 0);
   }
 
   // bedtime(d): start (hours, possibly >= 24) of the longest contiguous Sleep
@@ -256,7 +257,7 @@
     const hobbyTerm = 1.0 * Math.min(hobby, 1) - 0.40 * Math.max(0, hobby - 1);
 
     const hi = (highlights || [])
-      .map(valenceOf)
+      .map(readValue)
       .filter((v) => v != null)
       .reduce((s, v) => s + v, 0);
 
