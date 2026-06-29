@@ -1,0 +1,27 @@
+{
+  "date": "20260629",
+  "activity": [
+    { "time": "0:30", "label": "Hobby" },
+    { "time": "8:45", "label": "Sleep" },
+    { "time": "9:00", "label": "Life" },
+    { "time": "12:30", "label": "Work", "value": 0 },
+    { "time": "13:30", "label": "Work", "value": 1 },
+    { "time": "14:30", "label": "Life" },
+    { "time": "15:15", "label": "Work", "value": 1 },
+    { "time": "17:30", "label": "Work", "value": 0 },
+    { "time": "18:30", "label": "Work", "value": 1 },
+    { "time": "19:45", "label": "Life" },
+    { "time": "20:00", "label": "Hobby" },
+    { "time": "21:00", "label": "None" },
+    { "time": "21:15", "label": "Code", "value": 1 },
+    { "time": "23:00", "label": "Code", "value": 0 },
+    { "time": "24:00", "label": "None"}
+  ],
+  "highlights": [
+    { "value": -2, "note": "I couldn't fall asleep for three hours, and I started to panic." },
+    { "value": -1, "note": "I couldn't really concentrate at work this afternoon." },
+    { "value": -1, "note": "It looks like I might have to miss a tennis lesson." },
+    { "value": 1, "note": "I bought some nice clothes!" }
+  ],
+  "condition": "Poor"
+}

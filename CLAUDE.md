@@ -57,9 +57,10 @@ Each entry lives at `data/YYYYMMDD.json`:
   - `time` (string, required): End time of the block, `H:MM` or `HH:MM`.
   - `label` (string, required): Activity category. See *Activity Labels*.
   - `value` (integer, optional): `0`, `1`, or `2` — how good the block felt
-    (`0` = neutral, `1` = good, `2` = very good). **Only `Work` and `Code`
-    blocks carry a `value`; omit it for every other label.** A `Work`/`Code`
-    block with no `value` is treated as `1`.
+    (`0` = neutral, `1` = good, `2` = very good). **This field exists only
+    when `label` is `Work` or `Code`; it must never be present on a block
+    with any other label.** A `Work`/`Code` block with no `value` is
+    treated as `1`.
 
     > **Field rename — `valence` → `value`:** an earlier draft of this
     > schema renamed this field to `valence` with a `-5`–`+5` range. That

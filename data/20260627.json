@@ -20,8 +20,7 @@
     { "time": "21:30", "label": "Hobby" },
     { "time": "22:00", "label": "None" },
     { "time": "22:15", "label": "Life" },
-    { "time": "23:00", "label": "Code", "value": 1 },
-    { "time": "24:00", "label": "Sleep" }
+    { "time": "24:00", "label": "Code", "value": 1 }
   ],
   "highlights": [
     { "value": 2, "note": "I was able to decide Eudaimon Official." },
