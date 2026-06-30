@@ -1,0 +1,28 @@
+{
+  "date": "20260630",
+  "activity": [
+    { "time": "0:30", "label": "Code", "value": 1 },
+    { "time": "8:00", "label": "Sleep" },
+    { "time": "8:45", "label": "Life" },
+    { "time": "10:00", "label": "Work", "value": 0 },
+    { "time": "11:30", "label": "Work", "value": 2 },
+    { "time": "12:30", "label": "Go-out" },
+    { "time": "13:00", "label": "Life" },
+    { "time": "14:30", "label": "Work", "value": 1 },
+    { "time": "16:00", "label": "Work", "value": 0 },
+    { "time": "16:30", "label": "Code", "value": 1 },
+    { "time": "17:15", "label": "None" },
+    { "time": "18:00", "label": "Work", "value": 1 },
+    { "time": "23:00", "label": "Sleep" },
+    { "time": "23:15", "label": "None" },
+    { "time": "23:45", "label": "Life" },
+    { "time": "24:00", "label": "Code", "value": 2 }
+  ],
+  "highlights": [
+    { "value": 1, "note": "I understood I can receive the class one more!" },
+    { "value": 1, "note": "I was able to start exercising for free." },
+    { "value": -1, "note": "I just cannot seem to get work done." },
+    { "value": 2, "note": "I built my own Android app and can now automatically output Log JSON!(AI coding is amazing)" }
+  ],
+  "condition": "Good"
+}
