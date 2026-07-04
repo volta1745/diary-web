@@ -109,7 +109,7 @@ should never appear in any file.
 ## Eudaimon Calculation
 
 Each day produces a single scalar **Eudaimon score** `E_day` derived from
-the entry. The current formula is **v0.1** and will be revised as more
+the entry. The current formula is **v0.2** and will be revised as more
 entries accumulate.
 
 ```
@@ -130,9 +130,16 @@ Where:
 - `sleep_hours`, `life_hours`, `hobby_hours`, `goout_hours`,
   `transit_hours`, `none_hours` are summed durations (hours) of each label
   for day `d`.
-- `ω_work = { 0: −0.20, 1: 0.00, 2: +0.15 }` and
+- `ω_work = { 0: −0.62, 1: 0.00, 2: +0.15 }` and
   `ω_code = { 0: +0.08, 1: +0.15, 2: +0.30 }`.
   An activity block with no `value` field is treated as `value = 1`.
+  `ω_work[0]` was revised from `−0.20` (v0.1) to `−0.62` after a
+  correlation-maximizing grid search against `condition` over the
+  6/26–7/4 dataset (excluding the 6/30 outlier), which raised
+  `r(E_day, condition)` from 0.64 to 0.94. **Caveat:** this was fit on
+  8 data points for a single parameter — re-validate once more weeks
+  of data accumulate; do not chase further precision from this sample
+  size alone.
 - `bedtime(d)` is the start time (in hours, possibly ≥ 24 to denote past
   midnight) of the longest contiguous `Sleep` block whose start falls
   within `[d 12:00, d+1 12:00]`.

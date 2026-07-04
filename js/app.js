@@ -205,8 +205,10 @@
     });
   }
 
-  // ---- Eudaimon score (v0.1) ----
-  const OMEGA_WORK = { 0: -0.20, 1: 0.00, 2: 0.15 };
+  // ---- Eudaimon score (v0.2) ----
+  // ω_work[0] revised −0.20 -> −0.62 (v0.1 -> v0.2) via a grid search
+  // maximizing r(E_day, condition) over 6/26–7/4; see CLAUDE.md.
+  const OMEGA_WORK = { 0: -0.62, 1: 0.00, 2: 0.15 };
   const OMEGA_CODE = { 0: 0.08, 1: 0.15, 2: 0.30 };
 
   function sumHours(blocks, label) {
