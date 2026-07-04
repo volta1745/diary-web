@@ -1,0 +1,16 @@
+{
+  "date": "20260703",
+  "activity": [
+    { "time": "5:45", "label": "Sleep" },
+    { "time": "7:00", "label": "Life" },
+    { "time": "18:30", "label": "Work", "value": 1 },
+    { "time": "22:00", "label": "Hobby" },
+    { "time": "23:00", "label": "Life" },
+    { "time": "24:00", "label": "None" }
+  ],
+  "highlights": [
+    { "value": 1, "note": "good live!" },
+    { "value": -1, "note": "" }
+  ],
+  "condition": "Good"
+}
