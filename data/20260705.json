@@ -1,0 +1,26 @@
+{
+  "date": "20260705",
+  "activity": [
+    { "time": "1:00", "label": "None" },
+    { "time": "3:00", "label": "Hobby" },
+    { "time": "3:30", "label": "Life" },
+    { "time": "4:30", "label": "Code", "value": 1 },
+    { "time": "5:00", "label": "Life" },
+    { "time": "8:30", "label": "Sleep" },
+    { "time": "9:00", "label": "Life" },
+    { "time": "13:00", "label": "Code", "value": 2 },
+    { "time": "13:30", "label": "Life" },
+    { "time": "15:00", "label": "Hobby" },
+    { "time": "15:15", "label": "None" },
+    { "time": "15:30", "label": "Hobby" },
+    { "time": "16:30", "label": "Code", "value": 1 },
+    { "time": "19:30", "label": "Hobby" },
+    { "time": "20:00", "label": "Life" },
+    { "time": "21:45", "label": "None" },
+    { "time": "24:00", "label": "Sleep" }
+  ],
+  "highlights": [
+    { "value": 1, "note": "I can remember how to sing!" }
+  ],
+  "condition": "Fair"
+}

@@ -1,0 +1,19 @@
+{
+  "date": "20260706",
+  "activity": [
+    { "time": "0:45", "label": "Sleep" },
+    { "time": "1:00", "label": "Life" },
+    { "time": "1:45", "label": "Hobby" },
+    { "time": "6:30", "label": "Sleep" },
+    { "time": "7:30", "label": "Life" },
+    { "time": "8:30", "label": "Transit" },
+    { "time": "18:15", "label": "Work" },
+    { "time": "19:00", "label": "Transit" },
+    { "time": "19:15", "label": "Hobby" },
+    { "time": "21:00", "label": "Life" },
+    { "time": "22:00", "label": "None" },
+    { "time": "24:00", "label": "Hobby" }
+  ],
+  "highlights": [],
+  "condition": "Good"
+}
