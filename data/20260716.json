@@ -1,0 +1,17 @@
+{
+  "date": "20260716",
+  "activity": [
+    { "time": "0:15", "label": "Life" },
+    { "time": "6:30", "label": "Sleep" },
+    { "time": "7:30", "label": "Life" },
+    { "time": "9:30", "label": "Transit" },
+    { "time": "18:00", "label": "Code", "value": 0 },
+    { "time": "19:30", "label": "Transit" },
+    { "time": "20:15", "label": "Life" },
+    { "time": "20:30", "label": "None" },
+    { "time": "22:00", "label": "Hobby" },
+    { "time": "24:00", "label": "Sleep" }
+  ],
+  "highlights": [],
+  "condition": "Fair"
+}
