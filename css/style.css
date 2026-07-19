@@ -69,13 +69,20 @@ body {
     linear-gradient(to left, var(--paper) 85%, var(--paper-edge));
 }
 
-/* Right page split: top ~2/3 (highlights + condition), bottom ~1/3 (Eudaimon) */
+/* Right page split: top ~2/3 (highlights + PERMA), bottom ~1/3 (condition + Eudaimon) */
 .right-top {
   flex: 2 1 0;
   min-height: 0;
   display: flex;
+  gap: clamp(0.8rem, 2vw, 1.6rem);
+}
+.rt-col {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
   flex-direction: column;
 }
+.rt-col--perma { flex: 0 0 44%; }
 .right-bottom {
   flex: 1 1 0;
   min-height: 0;
@@ -99,6 +106,24 @@ body {
   margin-bottom: 1.25rem;
 }
 .page-header--right { text-align: right; }
+.page-header--left {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.view-link {
+  flex: 0 0 auto;
+  font-family: "Georgia", serif;
+  font-size: clamp(0.72rem, 1.4vw, 0.88rem);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.15s ease;
+}
+.view-link:hover { border-color: var(--accent); }
 
 .date {
   font-size: clamp(1.5rem, 3vw, 2.4rem);
@@ -215,12 +240,13 @@ body {
   font-style: italic;
 }
 
-/* Condition pinned to the bottom of the top region */
+/* Condition sits at the top of the bottom region, right-aligned */
 .condition-row--right {
-  margin-top: auto;
-  padding-top: 1rem;
+  margin-top: 0;
+  margin-bottom: 0.7rem;
+  padding-top: 0;
   justify-content: flex-end;
-  border-top: 1px solid var(--paper-edge);
+  border-top: none;
 }
 
 /* ---------- Eudaimon panel (bottom region of right page) ---------- */
@@ -447,3 +473,293 @@ body {
 /* Smooth date transitions */
 .book.is-changing { opacity: 0.35; transition: opacity 0.12s ease; }
 .book { transition: opacity 0.18s ease; }
+
+/* ==========================================================================
+   PERMA radar (Book view, right page top-right)
+   ========================================================================== */
+.perma-scale-note {
+  margin-left: 0.5rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  color: var(--ink-soft);
+}
+.perma {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 0;
+  padding-top: 0.4rem;
+}
+.perma-radar { width: 100%; max-width: 240px; height: auto; overflow: visible; }
+.radar-ring  { stroke: var(--paper-edge); stroke-width: 1; }
+.radar-spoke { stroke: var(--paper-edge); stroke-width: 1; }
+.radar-data  { fill: rgba(122, 112, 96, 0.16); stroke: var(--ink-soft); stroke-width: 1.5; }
+.radar-dot   { stroke: var(--paper); stroke-width: 1; }
+.radar-label {
+  font-size: 11px;
+  font-family: "Georgia", serif;
+}
+.radar-label.is-cited { font-weight: 700; text-decoration: underline; }
+.perma-empty { color: var(--ink-soft); font-style: italic; font-size: 0.95rem; }
+
+/* PERMA tag badge on a highlight */
+.perma-badge {
+  flex: 0 0 auto;
+  align-self: center;
+  min-width: 1.25em;
+  padding: 0.05em 0.4em;
+  border-radius: 999px;
+  font-size: 0.68em;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #fff;
+  background: var(--badge-color, var(--ink-soft));
+}
+
+/* ==========================================================================
+   Eudaimon diverging bars (Book view, right page bottom)
+   ========================================================================== */
+.eu-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 0.18rem;
+  overflow-y: auto;
+  min-height: 0;
+}
+.eu-bar {
+  display: grid;
+  grid-template-columns: 4.6rem 1fr 2.9rem;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: clamp(0.62rem, 1.15vw, 0.76rem);
+}
+.eu-bar-name {
+  color: var(--ink-soft);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.eu-bar-track {
+  position: relative;
+  height: 0.62rem;
+  background: rgba(58, 51, 42, 0.05);
+  border-radius: 3px;
+}
+.eu-bar-track::before { /* center 0-axis */
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: -1px;
+  bottom: -1px;
+  width: 1px;
+  background: var(--paper-edge);
+}
+.eu-bar-fill {
+  position: absolute;
+  top: 1px;
+  bottom: 1px;
+  border-radius: 2px;
+  opacity: 0.9;
+}
+.eu-bar-fill--pos { left: 50%; }
+.eu-bar-fill--neg { right: 50%; }
+.eu-bar-val {
+  text-align: right;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: var(--ink);
+}
+.eu-bar--base .eu-bar-track { background: transparent; }
+.eu-bar--base .eu-bar-track::before { display: none; }
+.eu-bar--base .eu-bar-name { font-style: italic; }
+
+/* ==========================================================================
+   Stats view
+   ========================================================================== */
+.stats-body {
+  height: 100%;
+  overflow: hidden;
+  background: #2c2620;
+  color: var(--ink);
+}
+.stats-topbar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  height: 48px;
+  padding: 0 clamp(0.75rem, 2vw, 1.5rem);
+  background: #241f19;
+  color: #f3ead8;
+}
+.stats-topbar .view-link { color: #d8c7a4; }
+.stats-topbar .view-link:hover { border-color: #d8c7a4; }
+.stats-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.stats-loading { margin-left: auto; font-size: 0.78rem; color: #b7a889; }
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: clamp(0.5rem, 1.2vw, 1rem);
+  height: calc(100dvh - 48px);
+  padding: clamp(0.5rem, 1.2vw, 1rem);
+}
+.panel {
+  background: var(--paper);
+  border-radius: 8px;
+  padding: clamp(0.7rem, 1.4vw, 1.1rem);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+}
+.panel-head {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.6rem;
+}
+.panel-title {
+  font-size: clamp(0.72rem, 1.4vw, 0.9rem);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+.panel-sub { color: var(--accent); font-weight: 600; text-transform: none; letter-spacing: 0.02em; }
+.panel-scale { margin-left: 0.3rem; font-size: 0.66rem; color: var(--ink-soft); letter-spacing: 0.1em; }
+.panel-empty { color: var(--ink-soft); font-style: italic; font-size: 0.9rem; padding: 0.5rem 0; }
+.mini-nav {
+  border: 1px solid var(--paper-edge);
+  background: transparent;
+  color: var(--ink-soft);
+  border-radius: 50%;
+  width: 1.5rem;
+  height: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  flex: 0 0 auto;
+}
+.mini-nav:hover { background: rgba(58, 51, 42, 0.06); color: var(--ink); }
+.mini-nav:disabled { opacity: 0.3; cursor: default; }
+.panel--composition .panel-title,
+.panel--perma-trend .panel-title { flex: 1; }
+
+/* (1) Composition tiles */
+.comp-body { display: flex; gap: 0.9rem; min-height: 0; overflow: auto; }
+.comp-grid {
+  display: grid;
+  grid-template-columns: repeat(var(--comp-cols, 14), 1fr);
+  gap: 2px;
+  flex: 1 1 auto;
+  align-content: start;
+  min-width: 0;
+}
+.comp-tile { aspect-ratio: 1; border-radius: 2px; }
+.comp-tile--empty { background: rgba(58, 51, 42, 0.04); }
+.comp-legend { list-style: none; flex: 0 0 auto; display: flex; flex-direction: column; gap: 0.28rem; font-size: 0.72rem; }
+.comp-legend-item { display: flex; align-items: center; gap: 0.4rem; }
+.legend-dot { width: 0.7em; height: 0.7em; border-radius: 2px; flex: 0 0 auto; }
+.legend-name { color: var(--ink); }
+.legend-val { margin-left: auto; color: var(--ink-soft); font-variant-numeric: tabular-nums; }
+
+/* (2)+(3) Weekday line + table */
+.wd-body { display: flex; gap: 0.8rem; min-height: 0; flex: 1; overflow: auto; }
+.wd-chart { flex: 1 1 60%; min-width: 0; display: flex; align-items: center; }
+.wd-svg { width: 100%; height: auto; }
+.axis-zero { stroke: var(--paper-edge); stroke-width: 1; stroke-dasharray: 3 3; }
+.axis-label { font-size: 9px; fill: var(--ink-soft); font-family: "Georgia", serif; }
+.wd-line { fill: none; stroke: var(--accent); stroke-width: 2; }
+.wd-pt { fill: var(--accent); }
+.wd-table { flex: 0 0 auto; border-collapse: collapse; font-size: 0.72rem; }
+.wd-table th, .wd-table td { padding: 0.16rem 0.5rem; text-align: right; }
+.wd-table th:first-child, .wd-table td:first-child { text-align: left; }
+.wd-table th { color: var(--ink-soft); font-weight: 600; border-bottom: 1px solid var(--paper-edge); }
+.wd-row { cursor: pointer; }
+.wd-row:hover { background: rgba(58, 51, 42, 0.05); }
+.wd-row.is-selected { background: rgba(138, 109, 59, 0.14); font-weight: 600; }
+
+/* (4) PERMA trend */
+.pt-body { display: flex; flex-direction: column; gap: 0.5rem; flex: 1; justify-content: center; }
+.pt-row { display: grid; grid-template-columns: 1.4rem 1fr 3.4rem; align-items: center; gap: 0.5rem; }
+.pt-axis { font-weight: 700; text-align: center; }
+.pt-track { position: relative; height: 0.8rem; background: rgba(58, 51, 42, 0.06); border-radius: 4px; overflow: hidden; }
+.pt-fill { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 4px; opacity: 0.9; }
+.pt-val { font-size: 0.74rem; text-align: right; font-variant-numeric: tabular-nums; color: var(--ink); }
+.pt-delta { color: var(--ink-soft); font-size: 0.68rem; }
+.pt-row.is-famine .pt-axis::after { content: "·"; color: var(--accent); }
+.pt-row.is-famine .pt-track { outline: 1px dashed rgba(138, 109, 59, 0.4); }
+.pt-nudge { margin-top: 0.6rem; font-size: 0.75rem; color: var(--accent); font-style: italic; }
+
+/* (5) Re-tune tool */
+.rt-caution { margin-left: auto; font-size: 0.68rem; color: #a9762f; }
+.rt-body { display: flex; flex-direction: column; gap: 0.5rem; min-height: 0; overflow: auto; }
+.rt-controls { display: flex; flex-wrap: wrap; gap: 0.4rem; align-items: flex-end; }
+.rt-field { display: flex; flex-direction: column; font-size: 0.62rem; color: var(--ink-soft); gap: 0.15rem; }
+.rt-field select, .rt-field input {
+  font: inherit;
+  font-size: 0.72rem;
+  padding: 0.2rem 0.35rem;
+  border: 1px solid var(--paper-edge);
+  border-radius: 4px;
+  background: #fff;
+  color: var(--ink);
+}
+.rt-field input[type="number"] { width: 4.2rem; }
+.rt-field input#rtRange { width: 10rem; }
+.rt-field input#rtExclude { width: 8rem; }
+.rt-run {
+  padding: 0.32rem 0.8rem;
+  border: none;
+  border-radius: 5px;
+  background: var(--accent);
+  color: var(--paper);
+  font: inherit;
+  font-size: 0.74rem;
+  cursor: pointer;
+}
+.rt-run:hover { filter: brightness(1.06); }
+.rt-out { display: flex; flex-direction: column; gap: 0.5rem; }
+.rt-summary { display: flex; flex-wrap: wrap; gap: 0.4rem 1rem; font-size: 0.74rem; }
+.rt-summary div { display: flex; gap: 0.35rem; align-items: baseline; }
+.rt-summary span { color: var(--ink-soft); font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.05em; }
+.rt-summary b { font-variant-numeric: tabular-nums; }
+.rt-scatter { width: 100%; max-width: 260px; height: auto; }
+.axis-line { stroke: var(--ink-soft); stroke-width: 1; }
+.rt-dot { fill: var(--accent); opacity: 0.7; }
+.rt-note { font-size: 0.66rem; color: var(--ink-soft); line-height: 1.5; }
+.rt-msg { font-size: 0.78rem; color: #a9762f; }
+.rt-snippet {
+  width: 100%;
+  min-height: 8rem;
+  font-family: "SFMono-Regular", "Menlo", "Consolas", monospace;
+  font-size: 0.66rem;
+  line-height: 1.45;
+  padding: 0.5rem;
+  border: 1px solid var(--paper-edge);
+  border-radius: 5px;
+  background: #fbf6ec;
+  color: var(--ink);
+  resize: vertical;
+}
+
+/* Stats: stack on narrow screens */
+@media (max-width: 860px) {
+  .stats-body { overflow: auto; }
+  .stats-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: none;
+    height: auto;
+    min-height: calc(100dvh - 48px);
+  }
+  .panel { min-height: 16rem; }
+  .wd-body, .comp-body { flex-direction: column; }
+}

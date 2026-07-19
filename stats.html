@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Diary — Stats</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="stats-body">
+  <header class="stats-topbar">
+    <a class="view-link" href="index.html" aria-label="Back to book view">← Book</a>
+    <h1 class="stats-title">Stats</h1>
+    <span class="stats-loading" id="loading">loading…</span>
+  </header>
+
+  <main class="stats-grid" id="grid">
+    <!-- (1) top-left: monthly composition -->
+    <section class="panel panel--composition" aria-labelledby="compHead">
+      <div class="panel-head">
+        <button class="mini-nav" id="compPrev" aria-label="Previous month">&#10094;</button>
+        <h2 class="panel-title" id="compHead">Composition <span class="panel-sub" id="compMonth"></span></h2>
+        <button class="mini-nav" id="compNext" aria-label="Next month">&#10095;</button>
+      </div>
+      <div class="comp-body">
+        <div class="comp-grid" id="compGrid" aria-hidden="true"></div>
+        <ul class="comp-legend" id="compLegend"></ul>
+      </div>
+    </section>
+
+    <!-- (4) top-right: PERMA trend -->
+    <section class="panel panel--perma-trend" aria-labelledby="ptHead">
+      <div class="panel-head">
+        <button class="mini-nav" id="ptPrev" aria-label="Previous week">&#10094;</button>
+        <h2 class="panel-title" id="ptHead">PERMA <span class="panel-sub" id="ptWeek"></span> <span class="panel-scale">0–4</span></h2>
+        <button class="mini-nav" id="ptNext" aria-label="Next week">&#10095;</button>
+      </div>
+      <div class="pt-body" id="ptBody"></div>
+      <div class="pt-nudge" id="ptNudge"></div>
+    </section>
+
+    <!-- (2)+(3) bottom-left: E_day line + weekday table -->
+    <section class="panel panel--weekday" aria-labelledby="wdHead">
+      <div class="panel-head">
+        <h2 class="panel-title" id="wdHead">E_day by weekday <span class="panel-sub" id="wdSel"></span></h2>
+      </div>
+      <div class="wd-body">
+        <div class="wd-chart" id="wdChart"></div>
+        <table class="wd-table" id="wdTable"></table>
+      </div>
+    </section>
+
+    <!-- (5) bottom-right: weight re-tuning tool -->
+    <section class="panel panel--retune" aria-labelledby="rtHead">
+      <div class="panel-head">
+        <h2 class="panel-title" id="rtHead">Re-tune weights</h2>
+        <span class="rt-caution" id="rtCaution"></span>
+      </div>
+      <div class="rt-body">
+        <div class="rt-controls">
+          <label class="rt-field">coeff
+            <select id="rtCoeff"></select>
+          </label>
+          <label class="rt-field">from
+            <input id="rtFrom" type="number" step="any" />
+          </label>
+          <label class="rt-field">to
+            <input id="rtTo" type="number" step="any" />
+          </label>
+          <label class="rt-field">step
+            <input id="rtStep" type="number" step="any" />
+          </label>
+          <label class="rt-field">dates
+            <input id="rtRange" type="text" placeholder="YYYYMMDD-YYYYMMDD" />
+          </label>
+          <label class="rt-field">exclude
+            <input id="rtExclude" type="text" placeholder="20260630,…" />
+          </label>
+          <button class="rt-run" id="rtRun">Run sweep</button>
+        </div>
+        <div class="rt-out" id="rtOut"></div>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="js/stats.js"></script>
+</body>
+</html>

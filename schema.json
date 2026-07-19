@@ -1,0 +1,50 @@
+{
+  "schema_version": "0.4",
+  "activity_labels": ["Sleep", "Work", "Code", "Life", "Hobby", "Go-out", "Transit", "None"],
+  "value_field": {
+    "applies_to": ["Work", "Code"],
+    "range": [0, 2],
+    "default": 1,
+    "note": "この項目は Work / Code のブロックにのみ存在。他ラベルには絶対に付けない。"
+  },
+  "highlights": {
+    "value":     { "range": [-5, 5], "exclude": [0], "required": true },
+    "note":      { "type": "string", "required": false },
+    "perma_tag": { "one_of": ["P", "E", "R", "M", "A"], "required": false, "default": "P" }
+  },
+  "perma_daily": {
+    "axes": ["P", "E", "R", "M", "A"],
+    "labels": {
+      "P": "Positive emotion",
+      "E": "Engagement",
+      "R": "Relationships",
+      "M": "Meaning",
+      "A": "Accomplishment"
+    },
+    "range": [0, 4],
+    "required": true,
+    "note": "毎晩の自己評定。行動ログから算出しない。0 が最小・4 が最大。"
+  },
+  "condition": ["Poor", "Fair", "Good", "Very Good", "Excellent"],
+  "palette": {
+    "note": "Book / Stats 両ビュー共有の配色。model.js はここから読む（色をハードコードしない）。",
+    "activity": {
+      "Sleep":   "#5f9e6e",
+      "Work":    "#cf6450",
+      "Code":    "#8a6bb5",
+      "Life":    "#c79a3a",
+      "Hobby":   "#4f7cc4",
+      "Go-out":  "#2f9e8f",
+      "Transit": "#9a9486",
+      "None":    "#c2bbac"
+    },
+    "highlights": "#c96a8e",
+    "perma": {
+      "P": "#e0a83e",
+      "E": "#4f86c6",
+      "R": "#d76b9e",
+      "M": "#7d6cc4",
+      "A": "#4ca37a"
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "current": {
+    "version": "0.2",
+    "updated": "20260714",
+    "baseline": 3.0,
+    "k_sleep": 0.20, "sleep_opt": 7.5,
+    "omega_work": { "0": -0.62, "1": 0.0, "2": 0.15 },
+    "omega_code": { "0": 0.08, "1": 0.15, "2": 0.30 },
+    "k_life": 0.08,
+    "k_hobby": 1.00, "k_hobby_excess": 0.40, "hobby_opt": 1.0,
+    "k_goout": 0.15,
+    "k_transit": 0.05,
+    "k_none": 0.35,
+    "k_phase": 0.15, "phase_free": 1.0,
+    "k_highlight": 1.0
+  },
+  "history": [
+    {
+      "date": "20260714",
+      "changed": "omega_work.0: -0.20 -> -0.62",
+      "rationale": "grid search vs condition, 6/26-7/4 excl 6/30 outlier, r 0.64 -> 0.94. 8 samples; re-validate.",
+      "data_range": "20260626-20260704"
+    }
+  ]
+}

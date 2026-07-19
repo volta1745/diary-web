@@ -1,0 +1,18 @@
+{
+  "schema_version": "0.4",
+  "date": "20200104",
+  "activity": [
+    { "time": "8:00",  "label": "Sleep" },
+    { "time": "9:00",  "label": "Life" },
+    { "time": "13:00", "label": "Code", "value": 2 },
+    { "time": "14:00", "label": "Life" },
+    { "time": "18:00", "label": "Go-out" },
+    { "time": "20:00", "label": "Life" },
+    { "time": "24:00", "label": "Hobby" }
+  ],
+  "highlights": [
+    { "value": 2, "note": "productive coding sprint", "perma": "E" }
+  ],
+  "perma": { "P": 3, "E": 4, "R": 1, "M": 3, "A": 3 },
+  "condition": "Very Good"
+}

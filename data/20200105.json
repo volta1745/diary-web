@@ -1,0 +1,21 @@
+{
+  "schema_version": "0.4",
+  "date": "20200105",
+  "activity": [
+    { "time": "7:30",  "label": "Sleep" },
+    { "time": "8:30",  "label": "Life" },
+    { "time": "12:00", "label": "Work", "value": 0 },
+    { "time": "13:00", "label": "Life" },
+    { "time": "17:30", "label": "Work", "value": 1 },
+    { "time": "18:30", "label": "Transit" },
+    { "time": "19:30", "label": "Hobby" },
+    { "time": "22:00", "label": "Life" },
+    { "time": "24:00", "label": "Sleep" }
+  ],
+  "highlights": [
+    { "value": 1, "note": "untagged highlight (no perma tag)" },
+    { "value": -1, "note": "also untagged" }
+  ],
+  "perma": { "P": 2, "E": 2, "R": 1, "M": 1, "A": 2 },
+  "condition": "Fair"
+}

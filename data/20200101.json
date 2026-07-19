@@ -1,0 +1,25 @@
+{
+  "schema_version": "0.4",
+  "date": "20200101",
+  "activity": [
+    { "time": "1:00",  "label": "Sleep" },
+    { "time": "1:30",  "label": "Life" },
+    { "time": "9:00",  "label": "Work", "value": 1 },
+    { "time": "12:00", "label": "Work", "value": 2 },
+    { "time": "13:00", "label": "Life" },
+    { "time": "17:00", "label": "Code", "value": 0 },
+    { "time": "18:00", "label": "Go-out" },
+    { "time": "19:00", "label": "Hobby" },
+    { "time": "20:30", "label": "Life" },
+    { "time": "22:30", "label": "Code", "value": 2 },
+    { "time": "24:00", "label": "Sleep" }
+  ],
+  "highlights": [
+    { "value": 5, "note": "shipped the exporter end-to-end", "perma": "A" },
+    { "value": 3, "note": "long call with an old friend", "perma": "R" },
+    { "value": -1, "note": "skipped lunch again" },
+    { "value": -3, "note": "lost an afternoon to one bug", "perma": "E" }
+  ],
+  "perma": { "P": 3, "E": 2, "R": 1, "M": 2, "A": 4 },
+  "condition": "Excellent"
+}

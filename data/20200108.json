@@ -1,0 +1,15 @@
+{
+  "schema_version": "0.4",
+  "date": "20200108",
+  "activity": [
+    { "time": "8:00",  "label": "Sleep" },
+    { "time": "10:00", "label": "Life" },
+    { "time": "16:00", "label": "Work", "value": 1 },
+    { "time": "17:00", "label": "Life" },
+    { "time": "24:00", "label": "None" }
+  ],
+  "highlights": [
+    { "value": 1, "note": "quiet day (no PERMA rating — tests the not-rated state)" }
+  ],
+  "condition": "Fair"
+}

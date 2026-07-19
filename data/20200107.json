@@ -1,0 +1,21 @@
+{
+  "schema_version": "0.4",
+  "date": "20200107",
+  "activity": [
+    { "time": "1:30",  "label": "Code", "value": 2 },
+    { "time": "9:00",  "label": "Life" },
+    { "time": "12:00", "label": "Work", "value": 2 },
+    { "time": "13:00", "label": "Life" },
+    { "time": "17:00", "label": "Work", "value": 2 },
+    { "time": "18:00", "label": "Go-out" },
+    { "time": "19:30", "label": "Hobby" },
+    { "time": "23:30", "label": "Life" },
+    { "time": "7:30",  "label": "Sleep" }
+  ],
+  "highlights": [
+    { "value": 5, "note": "best focus day in weeks", "perma": "E" },
+    { "value": 2, "note": "cooked a real dinner", "perma": "P" }
+  ],
+  "perma": { "P": 4, "E": 4, "R": 3, "M": 4, "A": 4 },
+  "condition": "Excellent"
+}

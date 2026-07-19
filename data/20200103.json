@@ -1,0 +1,19 @@
+{
+  "date": "20200103",
+  "activity": [
+    { "time": "1:00",  "label": "Happy" },
+    { "time": "8:30",  "label": "Sleep" },
+    { "time": "9:00",  "label": "Life" },
+    { "time": "12:00", "label": "Work" },
+    { "time": "13:00", "label": "Life" },
+    { "time": "17:00", "label": "Work" },
+    { "time": "19:00", "label": "Hobby" },
+    { "time": "24:00", "label": "None" }
+  ],
+  "diary": "Old free-form entry kept to test loader tolerance of the removed `diary` field and the retired `Happy` label.",
+  "highlights": [
+    { "value": 2, "note": "old-style highlight" },
+    { "value": -2, "note": "old-style low" }
+  ],
+  "condition": "Fair"
+}
