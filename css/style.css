@@ -176,9 +176,13 @@ body {
 .activity .slot {
   display: flex;
   align-items: stretch;
-  min-height: 1.6rem;      /* readability floor for tiny segments */
+  min-height: 0;           /* faithful heights: no floor, blocks shrink to scale */
   position: relative;
 }
+/* Blocks too short to fit their text drop it (height stays faithful).
+   Selector is more specific than `.activity .slot-block` below so it wins. */
+.activity .slot--tiny .slot-block { color: transparent; }
+.activity .slot--tiny .slot-time  { visibility: hidden; }
 .activity .slot-time {
   flex: 0 0 3.6rem;
   text-align: right;
@@ -653,17 +657,18 @@ body {
 .panel--composition .panel-title,
 .panel--perma-trend .panel-title { flex: 1; }
 
-/* (1) Composition tiles */
-.comp-body { display: flex; gap: 0.9rem; min-height: 0; overflow: auto; }
+/* (1) Composition tiles — one week, 24 cols × 7 rows, no scroll (always fits) */
+.comp-body { display: flex; gap: 0.9rem; min-height: 0; overflow: hidden; flex: 1; align-items: stretch; }
 .comp-grid {
   display: grid;
-  grid-template-columns: repeat(var(--comp-cols, 14), 1fr);
-  gap: 2px;
+  grid-template-columns: repeat(var(--comp-cols, 24), 1fr);
+  grid-template-rows: repeat(7, 1fr);
+  gap: 1px;
   flex: 1 1 auto;
-  align-content: start;
   min-width: 0;
+  min-height: 0;
 }
-.comp-tile { aspect-ratio: 1; border-radius: 2px; }
+.comp-tile { border-radius: 1px; min-width: 0; min-height: 0; }
 .comp-tile--empty { background: rgba(58, 51, 42, 0.04); }
 .comp-legend { list-style: none; flex: 0 0 auto; display: flex; flex-direction: column; gap: 0.28rem; font-size: 0.72rem; }
 .comp-legend-item { display: flex; align-items: center; gap: 0.4rem; }

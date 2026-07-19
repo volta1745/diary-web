@@ -22,7 +22,6 @@ const el = {
 
 const SCAN_LIMIT = 366; // stop after ~1 year of empty days in one direction
 let currentYmd = null;
-const MIN_BLOCK = 15;   // minutes — readability floor for tiny segments
 
 // ---- Date formatting ------------------------------------------------------
 function formatDate(ymd) {
@@ -46,18 +45,24 @@ async function findEntry(fromYmd, step, { inclusive = false } = {}) {
 }
 
 // ---- Activity timeline (left page) ----------------------------------------
+// Block heights are faithful to real duration: flex-grow ∝ minutes, flex-basis
+// 0, and no minimum floor, so a 4h block is exactly 4× a 1h block. Blocks too
+// short to show their label/time have that text dropped (see fitActivityLabels)
+// — the height stays truthful either way.
 function renderActivity(activity = []) {
   el.activity.innerHTML = "";
   const blocks = M.parseBlocks(activity);
   let startLabel = "0:00";
 
   blocks.forEach((b) => {
-    const duration = Math.max(b.endMin - b.startMin, MIN_BLOCK);
-
+    const mins = b.endMin - b.startMin;
     const li = document.createElement("li");
     li.className = "slot";
-    li.style.flexGrow = String(duration);
+    li.dataset.min = String(mins);
+    li.style.flex = `${mins} 1 0`; // grow ∝ duration, basis 0
     li.style.setProperty("--slot-color", M.colorFor(b.label));
+    // Blocks of 30 min or less hide their label (set now to avoid a flash).
+    if (mins <= 30) li.classList.add("slot--tiny");
 
     const time = document.createElement("span");
     time.className = "slot-time";
@@ -75,6 +80,20 @@ function renderActivity(activity = []) {
     const endH = Math.floor(b.endMin / 60);
     const endM = b.endMin % 60;
     startLabel = `${endH}:${String(endM).padStart(2, "0")}`;
+  });
+
+  requestAnimationFrame(fitActivityLabels);
+}
+
+// Hide a block's label + start-time when it is too short to carry them:
+// duration ≤ 30 min (explicit rule), or the text simply doesn't fit the block's
+// height. Faithful heights are never altered — only the text is dropped.
+function fitActivityLabels() {
+  el.activity.querySelectorAll(".slot").forEach((li) => {
+    const block = li.querySelector(".slot-block");
+    const mins = Number(li.dataset.min || 0);
+    const tooShort = mins <= 30 || (block && block.clientHeight < block.scrollHeight - 1);
+    li.classList.toggle("slot--tiny", !!tooShort);
   });
 }
 
@@ -226,8 +245,11 @@ async function renderEudaimon(ymd, data) {
   el.euScore.textContent = total.toFixed(2);
 
   // Diverging bars: contributions plotted left (−) / right (+) of a 0 axis.
+  // Fixed scale — |value| = 5 fills a full half-track — so bar lengths are
+  // comparable across days (not rescaled to each day's largest term). Terms
+  // beyond ±5 (e.g. a big highlights sum) clamp to full length.
+  const MAX_ABS = 5;
   const contrib = terms.filter((t) => t.key !== "base" && Math.abs(t.value) >= 0.005);
-  const maxAbs = Math.max(0.5, ...contrib.map((t) => Math.abs(t.value)));
 
   const list = el.euTerms;
   list.innerHTML = "";
@@ -259,7 +281,7 @@ async function renderEudaimon(ymd, data) {
     const fill = document.createElement("span");
     const pos = t.value >= 0;
     fill.className = "eu-bar-fill " + (pos ? "eu-bar-fill--pos" : "eu-bar-fill--neg");
-    fill.style.width = (Math.abs(t.value) / maxAbs) * 50 + "%";
+    fill.style.width = Math.min(Math.abs(t.value) / MAX_ABS, 1) * 50 + "%";
     fill.style.background = t.color;
     track.appendChild(fill);
 
@@ -342,6 +364,13 @@ function bindEvents() {
     if (!el.modal.hidden) return;
     if (e.key === "ArrowLeft") older();
     else if (e.key === "ArrowRight") newer();
+  });
+
+  // Re-evaluate which labels fit when the book is resized (heights change).
+  let resizeT;
+  window.addEventListener("resize", () => {
+    clearTimeout(resizeT);
+    resizeT = setTimeout(fitActivityLabels, 120);
   });
 
   let startX = 0, startY = 0, tracking = false;

@@ -5,14 +5,14 @@ import * as M from "./model.js";
 const SVG = "http://www.w3.org/2000/svg";
 const GAP_LIMIT = 45;   // stop scanning after this many consecutive empty days
 const HARD_CAP = 800;   // absolute ceiling on the backward scan
-const COMP_TILES = 168; // 24h × 7 — one representative week
-const COMP_COLS = 14;   // 14 × 12 = 168
+const COMP_TILES = 168; // 24h × 7 — one week
+const COMP_COLS = 24;   // 24 × 7 = 168 (one column per hour, one row per day)
 const FAMINE_THRESHOLD = 1.5; // 0–4 scale; below this a PERMA axis is flagged
 
 const $ = (id) => document.getElementById(id);
 
 let entries = [];             // ascending by ymd, precomputed
-let compMonth = null;         // { y, m }  (m: 0-based)
+let compWeekStart = null;     // Monday YYYYMMDD (composition week)
 let selectedWeekday = null;   // 0=Mon … 6=Sun
 let ptWeekStart = null;       // Monday YYYYMMDD
 let eGlobal = { min: 0, max: 1 };
@@ -77,19 +77,16 @@ function apportion(totals) {
 }
 
 function renderComposition() {
-  const inMonth = entries.filter(
-    (e) => e.date.getFullYear() === compMonth.y && e.date.getMonth() === compMonth.m
-  );
+  const start = M.ymdToDate(compWeekStart);
+  const end = new Date(start); end.setDate(end.getDate() + 6);
+  const inWeek = entries.filter((e) => e.date >= start && e.date <= end);
   const totals = {};
-  inMonth.forEach((e) => { for (const k in e.hours) totals[k] = (totals[k] || 0) + e.hours[k]; });
+  inWeek.forEach((e) => { for (const k in e.hours) totals[k] = (totals[k] || 0) + e.hours[k]; });
 
-  $("compMonth").textContent = `${compMonth.y}.${String(compMonth.m + 1).padStart(2, "0")}`;
+  $("compWeek").textContent = `wk of ${start.getMonth() + 1}/${start.getDate()}`;
 
-  // disable forward nav beyond the current month
-  const now = new Date();
-  $("compNext").disabled =
-    compMonth.y > now.getFullYear() ||
-    (compMonth.y === now.getFullYear() && compMonth.m >= now.getMonth());
+  // disable forward nav beyond the current week
+  $("compNext").disabled = compWeekStart >= mondayOf(M.todayYmd());
 
   const grid = $("compGrid");
   const legend = $("compLegend");
@@ -101,7 +98,7 @@ function renderComposition() {
   if (parts.length === 0) {
     const p = document.createElement("p");
     p.className = "panel-empty";
-    p.textContent = "No data this month.";
+    p.textContent = "No data this week.";
     grid.appendChild(p);
     return;
   }
@@ -493,16 +490,8 @@ function scatter(eVals, conds) {
 // Wiring
 // ===========================================================================
 function bindNav() {
-  $("compPrev").addEventListener("click", () => {
-    let m = compMonth.m - 1, y = compMonth.y;
-    if (m < 0) { m = 11; y--; }
-    compMonth = { y, m }; renderComposition();
-  });
-  $("compNext").addEventListener("click", () => {
-    let m = compMonth.m + 1, y = compMonth.y;
-    if (m > 11) { m = 0; y++; }
-    compMonth = { y, m }; renderComposition();
-  });
+  $("compPrev").addEventListener("click", () => { compWeekStart = M.shiftYmd(compWeekStart, -7); renderComposition(); });
+  $("compNext").addEventListener("click", () => { compWeekStart = M.shiftYmd(compWeekStart, +7); renderComposition(); });
   $("ptPrev").addEventListener("click", () => { ptWeekStart = M.shiftYmd(ptWeekStart, -7); renderPermaTrend(); });
   $("ptNext").addEventListener("click", () => { ptWeekStart = M.shiftYmd(ptWeekStart, +7); renderPermaTrend(); });
 }
@@ -517,11 +506,9 @@ async function init() {
     eGlobal = { min: Math.min(...es), max: Math.max(...es) };
   }
 
-  // defaults: composition = one month ago; weekday = today; PERMA = this week
-  const nowD = new Date();
-  const dm = new Date(nowD.getFullYear(), nowD.getMonth() - 1, 1);
-  compMonth = { y: dm.getFullYear(), m: dm.getMonth() };
-  selectedWeekday = mondayIdx(nowD);
+  // defaults: composition + PERMA = this week; weekday = today
+  compWeekStart = mondayOf(M.todayYmd());
+  selectedWeekday = mondayIdx(new Date());
   ptWeekStart = mondayOf(M.todayYmd());
 
   bindNav();
