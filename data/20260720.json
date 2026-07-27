@@ -1,0 +1,26 @@
+{
+  "date": "20260720",
+  "activity": [
+    { "time": "0:30", "label": "None" },
+    { "time": "1:00", "label": "Life" },
+    { "time": "9:30", "label": "Sleep" },
+    { "time": "10:00", "label": "None" },
+    { "time": "10:30", "label": "Life" },
+    { "time": "11:30", "label": "Code", "value": 1 },
+    { "time": "12:00", "label": "None" },
+    { "time": "14:15", "label": "Sleep" },
+    { "time": "18:30", "label": "Work", "value": 2 },
+    { "time": "19:00", "label": "Code", "value": 2 },
+    { "time": "19:45", "label": "None" },
+    { "time": "21:15", "label": "Hobby" },
+    { "time": "21:45", "label": "Life" },
+    { "time": "24:00", "label": "Code", "value": 2 }
+  ],
+  "highlights": [
+    { "value": 2, "note": "The nap was pleasant" },
+    { "value": 1, "note": "Coding has progressed" },
+    { "value": 1, "note": "I was able to create a word vault called Lexicons" },
+    { "value": -1, "note": "I was very sad when I remembered that I was cut off for no reason." }
+  ],
+  "condition": "Excellent"
+}

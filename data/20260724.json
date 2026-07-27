@@ -1,0 +1,19 @@
+{
+  "date": "20260724",
+  "activity": [
+    { "time": "1:00", "label": "None" },
+    { "time": "7:30", "label": "Sleep" },
+    { "time": "8:15", "label": "None" },
+    { "time": "9:00", "label": "Life" },
+    { "time": "11:30", "label": "Work", "value": 2 },
+    { "time": "12:30", "label": "Transit" },
+    { "time": "15:00", "label": "Work", "value": 2 },
+    { "time": "17:30", "label": "Work", "value": 1 },
+    { "time": "20:30", "label": "Work", "value": 0 },
+    { "time": "22:00", "label": "Transit" },
+    { "time": "22:30", "label": "Life" },
+    { "time": "24:00", "label": "Sleep" }
+  ],
+  "highlights": [],
+  "condition": "Poor"
+}
