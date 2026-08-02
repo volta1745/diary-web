@@ -1,0 +1,103 @@
+{
+  "date": "20260727",
+  "activity": [
+    {
+      "time": "7:45",
+      "label": "Sleep"
+    },
+    {
+      "time": "8:00",
+      "label": "Life"
+    },
+    {
+      "time": "9:00",
+      "label": "Work",
+      "value": 0
+    },
+    {
+      "time": "9:30",
+      "label": "Life"
+    },
+    {
+      "time": "12:00",
+      "label": "Work",
+      "value": 2
+    },
+    {
+      "time": "12:30",
+      "label": "Work",
+      "value": 0
+    },
+    {
+      "time": "13:00",
+      "label": "Life"
+    },
+    {
+      "time": "13:30",
+      "label": "Work",
+      "value": 1
+    },
+    {
+      "time": "14:00",
+      "label": "Work",
+      "value": 0
+    },
+    {
+      "time": "14:15",
+      "label": "Life"
+    },
+    {
+      "time": "14:45",
+      "label": "Code",
+      "value": 1
+    },
+    {
+      "time": "15:30",
+      "label": "Work",
+      "value": 2
+    },
+    {
+      "time": "16:00",
+      "label": "Code",
+      "value": 1
+    },
+    {
+      "time": "17:00",
+      "label": "Code",
+      "value": 2
+    },
+    {
+      "time": "17:30",
+      "label": "Life"
+    },
+    {
+      "time": "18:30",
+      "label": "Code",
+      "value": 1
+    },
+    {
+      "time": "21:00",
+      "label": "Sleep"
+    },
+    {
+      "time": "21:45",
+      "label": "Hobby"
+    },
+    {
+      "time": "23:15",
+      "label": "Life"
+    },
+    {
+      "time": "24:00",
+      "label": "Code",
+      "value": 1
+    }
+  ],
+  "perma": {
+    "P": 3,
+    "E": 4,
+    "R": 1,
+    "M": 3,
+    "A": 2
+  }
+}
