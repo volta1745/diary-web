@@ -1,18 +1,64 @@
 {
   "date": "20260721",
   "activity": [
-    { "time": "1:00", "label": "None" },
-    { "time": "2:00", "label": "Code", "value": 2 },
-    { "time": "2:30", "label": "Life" },
-    { "time": "6:45", "label": "Sleep" },
-    { "time": "7:15", "label": "Life" },
-    { "time": "12:00", "label": "Code", "value": 2 },
-    { "time": "12:15", "label": "Life" },
-    { "time": "19:30", "label": "Code", "value": 2 },
-    { "time": "21:00", "label": "Life" },
-    { "time": "22:00", "label": "Hobby" },
-    { "time": "24:00", "label": "Sleep" }
+    {
+      "time": "1:00",
+      "label": "None"
+    },
+    {
+      "time": "2:00",
+      "label": "Code",
+      "value": 2
+    },
+    {
+      "time": "2:30",
+      "label": "Life"
+    },
+    {
+      "time": "6:45",
+      "label": "Sleep"
+    },
+    {
+      "time": "7:15",
+      "label": "Life"
+    },
+    {
+      "time": "12:00",
+      "label": "Code",
+      "value": 2
+    },
+    {
+      "time": "12:15",
+      "label": "Life"
+    },
+    {
+      "time": "19:30",
+      "label": "Code",
+      "value": 2
+    },
+    {
+      "time": "21:00",
+      "label": "Life"
+    },
+    {
+      "time": "22:00",
+      "label": "Hobby"
+    },
+    {
+      "time": "24:00",
+      "label": "Sleep"
+    }
   ],
   "highlights": [],
-  "condition": "Very Good"
+  "condition": "Very Good",
+  "ai": [
+    {
+      "perma": "E",
+      "summary": "Engaged coding day"
+    },
+    {
+      "perma": "A",
+      "summary": "Productive progress"
+    }
+  ]
 }

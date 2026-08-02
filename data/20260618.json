@@ -1,14 +1,45 @@
 {
   "date": "20260618",
   "activity": [
-    { "time": "7:30", "label": "Sleep" },
-    { "time": "8:30", "label": "None" },
-    { "time": "11:00", "label": "Work" },
-    { "time": "12:45", "label": "None" },
-    { "time": "19:00", "label": "Work" },
-    { "time": "20:00", "label": "Life" },
-    { "time": "24:00", "label": "Hobby" }
+    {
+      "time": "7:30",
+      "label": "Sleep"
+    },
+    {
+      "time": "8:30",
+      "label": "None"
+    },
+    {
+      "time": "11:00",
+      "label": "Work"
+    },
+    {
+      "time": "12:45",
+      "label": "None"
+    },
+    {
+      "time": "19:00",
+      "label": "Work"
+    },
+    {
+      "time": "20:00",
+      "label": "Life"
+    },
+    {
+      "time": "24:00",
+      "label": "Hobby"
+    }
   ],
   "diary": "Give it up! You're trash today—die.",
-  "condition": "Fair"
+  "condition": "Fair",
+  "ai": [
+    {
+      "perma": "E",
+      "summary": "A moderate work session"
+    },
+    {
+      "perma": "P",
+      "summary": "Some hobby time and rest"
+    }
+  ]
 }

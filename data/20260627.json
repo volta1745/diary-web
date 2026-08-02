@@ -1,31 +1,113 @@
 {
   "date": "20260627",
   "activity": [
-    { "time": "1:00", "label": "Code", "value": 0 },
-    { "time": "9:15", "label": "Sleep" },
-    { "time": "9:30", "label": "Life" },
-    { "time": "11:15", "label": "Code", "value": 2 },
-    { "time": "12:30", "label": "Hobby" },
-    { "time": "14:00", "label": "Code", "value": 2 },
-    { "time": "14:30", "label": "Life" },
-    { "time": "15:00", "label": "None" },
-    { "time": "15:15", "label": "Life" },
-    { "time": "15:45", "label": "Code", "value": 0 },
-    { "time": "16:45", "label": "Life" },
-    { "time": "17:45", "label": "Code", "value": 2 },
-    { "time": "18:15", "label": "None" },
-    { "time": "19:00", "label": "Life" },
-    { "time": "19:15", "label": "None" },
-    { "time": "20:15", "label": "Code", "value": 0 },
-    { "time": "21:30", "label": "Hobby" },
-    { "time": "22:00", "label": "None" },
-    { "time": "22:15", "label": "Life" },
-    { "time": "24:00", "label": "Code", "value": 1 }
+    {
+      "time": "1:00",
+      "label": "Code",
+      "value": 0
+    },
+    {
+      "time": "9:15",
+      "label": "Sleep"
+    },
+    {
+      "time": "9:30",
+      "label": "Life"
+    },
+    {
+      "time": "11:15",
+      "label": "Code",
+      "value": 2
+    },
+    {
+      "time": "12:30",
+      "label": "Hobby"
+    },
+    {
+      "time": "14:00",
+      "label": "Code",
+      "value": 2
+    },
+    {
+      "time": "14:30",
+      "label": "Life"
+    },
+    {
+      "time": "15:00",
+      "label": "None"
+    },
+    {
+      "time": "15:15",
+      "label": "Life"
+    },
+    {
+      "time": "15:45",
+      "label": "Code",
+      "value": 0
+    },
+    {
+      "time": "16:45",
+      "label": "Life"
+    },
+    {
+      "time": "17:45",
+      "label": "Code",
+      "value": 2
+    },
+    {
+      "time": "18:15",
+      "label": "None"
+    },
+    {
+      "time": "19:00",
+      "label": "Life"
+    },
+    {
+      "time": "19:15",
+      "label": "None"
+    },
+    {
+      "time": "20:15",
+      "label": "Code",
+      "value": 0
+    },
+    {
+      "time": "21:30",
+      "label": "Hobby"
+    },
+    {
+      "time": "22:00",
+      "label": "None"
+    },
+    {
+      "time": "22:15",
+      "label": "Life"
+    },
+    {
+      "time": "24:00",
+      "label": "Code",
+      "value": 1
+    }
   ],
   "highlights": [
-    { "value": 2, "note": "I was able to decide Eudaimon Official." },
-    { "value": 1, "note": "I enjoyed shadowing." },
-    { "value": -1, "note": "" }
+    {
+      "value": 2,
+      "note": "I was able to decide Eudaimon Official."
+    },
+    {
+      "value": 1,
+      "note": "I enjoyed shadowing."
+    },
+    {
+      "value": -1,
+      "note": ""
+    }
   ],
-  "condition": "Very Good"
+  "condition": "Very Good",
+  "ai": [
+    {
+      "perma": "E",
+      "summary": "English vocabulary practice"
+    }
+  ]
 }

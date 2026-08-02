@@ -1,21 +1,78 @@
 {
   "date": "20260701",
   "activity": [
-    { "time": "0:45", "label": "Code", "value": 2 },
-    { "time": "1:15", "label": "Hobby" },
-    { "time": "2:00", "label": "Code", "value": 0 },
-    { "time": "3:00", "label": "Hobby" },
-    { "time": "6:30", "label": "Sleep" },
-    { "time": "7:30", "label": "Work" },
-    { "time": "20:45", "label": "Work", "value": 0 },
-    { "time": "21:00", "label": "Work", "value": 1 },
-    { "time": "21:15", "label": "Life" },
-    { "time": "22:00", "label": "None" },
-    { "time": "24:00", "label": "Sleep" }
+    {
+      "time": "0:45",
+      "label": "Code",
+      "value": 2
+    },
+    {
+      "time": "1:15",
+      "label": "Hobby"
+    },
+    {
+      "time": "2:00",
+      "label": "Code",
+      "value": 0
+    },
+    {
+      "time": "3:00",
+      "label": "Hobby"
+    },
+    {
+      "time": "6:30",
+      "label": "Sleep"
+    },
+    {
+      "time": "7:30",
+      "label": "Work"
+    },
+    {
+      "time": "20:45",
+      "label": "Work",
+      "value": 0
+    },
+    {
+      "time": "21:00",
+      "label": "Work",
+      "value": 1
+    },
+    {
+      "time": "21:15",
+      "label": "Life"
+    },
+    {
+      "time": "22:00",
+      "label": "None"
+    },
+    {
+      "time": "24:00",
+      "label": "Sleep"
+    }
   ],
   "highlights": [
-    { "value": 3, "note": "I can now listen to old new songs!" },
-    { "value": -3, "note": "I just can't seem to fit in.sry" }
+    {
+      "value": 3,
+      "note": "I can now listen to old new songs!"
+    },
+    {
+      "value": -3,
+      "note": "I just can't seem to fit in.sry"
+    }
   ],
-  "condition": "Poor"
+  "condition": "Poor",
+  "ai": [
+    {
+      "perma": "E",
+      "summary": "Rediscovered enjoyment in music"
+    },
+    {
+      "perma": "A",
+      "summary": "Solid coding and work output"
+    },
+    {
+      "perma": "R",
+      "summary": "Felt out of place socially"
+    }
+  ]
 }

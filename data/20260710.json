@@ -1,24 +1,81 @@
 {
   "date": "20260710",
   "activity": [
-    { "time": "2:30", "label": "None" },
-    { "time": "3:45", "label": "Code", "value": 2 },
-    { "time": "5:15", "label": "Life" },
-    { "time": "6:00", "label": "Transit" },
-    { "time": "7:00", "label": "Hobby" },
-    { "time": "7:30", "label": "Life" },
-    { "time": "11:30", "label": "Sleep" },
-    { "time": "13:30", "label": "Life" },
-    { "time": "15:30", "label": "Hobby" },
-    { "time": "16:00", "label": "Life" },
-    { "time": "16:45", "label": "None" },
-    { "time": "19:00", "label": "Code", "value": 1 },
-    { "time": "20:00", "label": "Life" },
-    { "time": "22:00", "label": "Hobby" },
-    { "time": "24:00", "label": "Code", "value": 2 }
+    {
+      "time": "2:30",
+      "label": "None"
+    },
+    {
+      "time": "3:45",
+      "label": "Code",
+      "value": 2
+    },
+    {
+      "time": "5:15",
+      "label": "Life"
+    },
+    {
+      "time": "6:00",
+      "label": "Transit"
+    },
+    {
+      "time": "7:00",
+      "label": "Hobby"
+    },
+    {
+      "time": "7:30",
+      "label": "Life"
+    },
+    {
+      "time": "11:30",
+      "label": "Sleep"
+    },
+    {
+      "time": "13:30",
+      "label": "Life"
+    },
+    {
+      "time": "15:30",
+      "label": "Hobby"
+    },
+    {
+      "time": "16:00",
+      "label": "Life"
+    },
+    {
+      "time": "16:45",
+      "label": "None"
+    },
+    {
+      "time": "19:00",
+      "label": "Code",
+      "value": 1
+    },
+    {
+      "time": "20:00",
+      "label": "Life"
+    },
+    {
+      "time": "22:00",
+      "label": "Hobby"
+    },
+    {
+      "time": "24:00",
+      "label": "Code",
+      "value": 2
+    }
   ],
   "highlights": [
-    { "value": 2, "note": "Going for a walk brought back memories of my childhood. I felt proud that I had been so outgoing as a child." }
+    {
+      "value": 2,
+      "note": "Going for a walk brought back memories of my childhood. I felt proud that I had been so outgoing as a child."
+    }
   ],
-  "condition": "Very Good"
+  "condition": "Very Good",
+  "ai": [
+    {
+      "perma": "A",
+      "summary": "Researched development conventions"
+    }
+  ]
 }

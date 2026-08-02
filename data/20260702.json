@@ -1,16 +1,47 @@
 {
   "date": "20260702",
   "activity": [
-    { "time": "5:30", "label": "Sleep" },
-    { "time": "7:00", "label": "Life" },
-    { "time": "20:30", "label": "Work", "value": 0 },
-    { "time": "21:30", "label": "Life" },
-    { "time": "22:00", "label": "None" },
-    { "time": "24:00", "label": "Sleep" }
+    {
+      "time": "5:30",
+      "label": "Sleep"
+    },
+    {
+      "time": "7:00",
+      "label": "Life"
+    },
+    {
+      "time": "20:30",
+      "label": "Work",
+      "value": 0
+    },
+    {
+      "time": "21:30",
+      "label": "Life"
+    },
+    {
+      "time": "22:00",
+      "label": "None"
+    },
+    {
+      "time": "24:00",
+      "label": "Sleep"
+    }
   ],
   "highlights": [
-    { "value": -1, "note": "I did not exist." },
-    { "value": -1, "note": "" }
+    {
+      "value": -1,
+      "note": "I did not exist."
+    },
+    {
+      "value": -1,
+      "note": ""
+    }
   ],
-  "condition": "Poor"
+  "condition": "Poor",
+  "ai": [
+    {
+      "perma": "M",
+      "summary": "A low, empty-feeling day"
+    }
+  ]
 }

@@ -1,19 +1,71 @@
 {
   "date": "20260723",
   "activity": [
-    { "time": "0:30", "label": "Work", "value": 2 },
-    { "time": "1:00", "label": "Life" },
-    { "time": "7:45", "label": "Sleep" },
-    { "time": "8:15", "label": "Life" },
-    { "time": "11:00", "label": "Work", "value": 1 },
-    { "time": "11:30", "label": "Work", "value": 2 },
-    { "time": "11:45", "label": "Life" },
-    { "time": "14:00", "label": "Work", "value": 1 },
-    { "time": "15:00", "label": "Work", "value": 2 },
-    { "time": "19:00", "label": "Work", "value": 1 },
-    { "time": "19:30", "label": "Life" },
-    { "time": "24:00", "label": "None" }
+    {
+      "time": "0:30",
+      "label": "Work",
+      "value": 2
+    },
+    {
+      "time": "1:00",
+      "label": "Life"
+    },
+    {
+      "time": "7:45",
+      "label": "Sleep"
+    },
+    {
+      "time": "8:15",
+      "label": "Life"
+    },
+    {
+      "time": "11:00",
+      "label": "Work",
+      "value": 1
+    },
+    {
+      "time": "11:30",
+      "label": "Work",
+      "value": 2
+    },
+    {
+      "time": "11:45",
+      "label": "Life"
+    },
+    {
+      "time": "14:00",
+      "label": "Work",
+      "value": 1
+    },
+    {
+      "time": "15:00",
+      "label": "Work",
+      "value": 2
+    },
+    {
+      "time": "19:00",
+      "label": "Work",
+      "value": 1
+    },
+    {
+      "time": "19:30",
+      "label": "Life"
+    },
+    {
+      "time": "24:00",
+      "label": "None"
+    }
   ],
   "highlights": [],
-  "condition": "Poor"
+  "condition": "Poor",
+  "ai": [
+    {
+      "perma": "A",
+      "summary": "A long, heavy work push"
+    },
+    {
+      "perma": "M",
+      "summary": "Overwork left the day feeling flat"
+    }
+  ]
 }

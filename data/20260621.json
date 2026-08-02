@@ -1,13 +1,41 @@
 {
   "date": "20260621",
   "activity": [
-    { "time": "1:00", "label": "Life" },
-    { "time": "11:00", "label": "Sleep" },
-    { "time": "18:00", "label": "Code" },
-    { "time": "21:00", "label": "Sleep" },
-    { "time": "23:00", "label": "Hobby" },
-    { "time": "24:00", "label": "Life" }
+    {
+      "time": "1:00",
+      "label": "Life"
+    },
+    {
+      "time": "11:00",
+      "label": "Sleep"
+    },
+    {
+      "time": "18:00",
+      "label": "Code"
+    },
+    {
+      "time": "21:00",
+      "label": "Sleep"
+    },
+    {
+      "time": "23:00",
+      "label": "Hobby"
+    },
+    {
+      "time": "24:00",
+      "label": "Life"
+    }
   ],
   "diary": "A person's worth is determined by how they end their life.",
-  "condition": "Fair"
+  "condition": "Fair",
+  "ai": [
+    {
+      "perma": "A",
+      "summary": "Set up development tooling and conventions"
+    },
+    {
+      "perma": "E",
+      "summary": "Deep engagement in the app project"
+    }
+  ]
 }

@@ -1,15 +1,51 @@
 {
   "date": "20260725",
   "activity": [
-    { "time": "9:45", "label": "Sleep" },
-    { "time": "10:15", "label": "Hobby" },
-    { "time": "11:15", "label": "None" },
-    { "time": "12:30", "label": "Work", "value": 1 },
-    { "time": "13:00", "label": "Life" },
-    { "time": "14:30", "label": "Work", "value": 2 },
-    { "time": "19:30", "label": "Hobby" },
-    { "time": "24:00", "label": "None" }
+    {
+      "time": "9:45",
+      "label": "Sleep"
+    },
+    {
+      "time": "10:15",
+      "label": "Hobby"
+    },
+    {
+      "time": "11:15",
+      "label": "None"
+    },
+    {
+      "time": "12:30",
+      "label": "Work",
+      "value": 1
+    },
+    {
+      "time": "13:00",
+      "label": "Life"
+    },
+    {
+      "time": "14:30",
+      "label": "Work",
+      "value": 2
+    },
+    {
+      "time": "19:30",
+      "label": "Hobby"
+    },
+    {
+      "time": "24:00",
+      "label": "None"
+    }
   ],
   "highlights": [],
-  "condition": "Very Good"
+  "condition": "Very Good",
+  "ai": [
+    {
+      "perma": "P",
+      "summary": "A balanced, upbeat day"
+    },
+    {
+      "perma": "E",
+      "summary": "Enjoyable work and hobby mix"
+    }
+  ]
 }

@@ -1,20 +1,73 @@
 {
   "date": "20260714",
   "activity": [
-    { "time": "1:00", "label": "Hobby" },
-    { "time": "8:45", "label": "Sleep" },
-    { "time": "12:00", "label": "Work", "value": 0 },
-    { "time": "13:00", "label": "Life" },
-    { "time": "16:00", "label": "Work", "value": 1 },
-    { "time": "16:30", "label": "None" },
-    { "time": "17:15", "label": "Work", "value": 0 },
-    { "time": "17:45", "label": "None" },
-    { "time": "19:00", "label": "Hobby" },
-    { "time": "20:00", "label": "Life" },
-    { "time": "22:00", "label": "None" },
-    { "time": "23:00", "label": "Code", "value": 2 },
-    { "time": "24:00", "label": "Sleep" }
+    {
+      "time": "1:00",
+      "label": "Hobby"
+    },
+    {
+      "time": "8:45",
+      "label": "Sleep"
+    },
+    {
+      "time": "12:00",
+      "label": "Work",
+      "value": 0
+    },
+    {
+      "time": "13:00",
+      "label": "Life"
+    },
+    {
+      "time": "16:00",
+      "label": "Work",
+      "value": 1
+    },
+    {
+      "time": "16:30",
+      "label": "None"
+    },
+    {
+      "time": "17:15",
+      "label": "Work",
+      "value": 0
+    },
+    {
+      "time": "17:45",
+      "label": "None"
+    },
+    {
+      "time": "19:00",
+      "label": "Hobby"
+    },
+    {
+      "time": "20:00",
+      "label": "Life"
+    },
+    {
+      "time": "22:00",
+      "label": "None"
+    },
+    {
+      "time": "23:00",
+      "label": "Code",
+      "value": 2
+    },
+    {
+      "time": "24:00",
+      "label": "Sleep"
+    }
   ],
   "highlights": [],
-  "condition": "Good"
+  "condition": "Good",
+  "ai": [
+    {
+      "perma": "E",
+      "summary": "Technical development work"
+    },
+    {
+      "perma": "P",
+      "summary": "Casual live conversation"
+    }
+  ]
 }

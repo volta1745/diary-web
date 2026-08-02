@@ -1,22 +1,76 @@
 {
   "date": "20260704",
   "activity": [
-    { "time": "1:15", "label": "Life" },
-    { "time": "8:45", "label": "Sleep" },
-    { "time": "10:00", "label": "Life" },
-    { "time": "12:30", "label": "Hobby" },
-    { "time": "13:45", "label": "Life" },
-    { "time": "17:00", "label": "Sleep" },
-    { "time": "18:00", "label": "None" },
-    { "time": "19:00", "label": "Code", "value": 0 },
-    { "time": "21:30", "label": "Code", "value": 2 },
-    { "time": "22:15", "label": "Life" },
-    { "time": "24:00", "label": "None" }
+    {
+      "time": "1:15",
+      "label": "Life"
+    },
+    {
+      "time": "8:45",
+      "label": "Sleep"
+    },
+    {
+      "time": "10:00",
+      "label": "Life"
+    },
+    {
+      "time": "12:30",
+      "label": "Hobby"
+    },
+    {
+      "time": "13:45",
+      "label": "Life"
+    },
+    {
+      "time": "17:00",
+      "label": "Sleep"
+    },
+    {
+      "time": "18:00",
+      "label": "None"
+    },
+    {
+      "time": "19:00",
+      "label": "Code",
+      "value": 0
+    },
+    {
+      "time": "21:30",
+      "label": "Code",
+      "value": 2
+    },
+    {
+      "time": "22:15",
+      "label": "Life"
+    },
+    {
+      "time": "24:00",
+      "label": "None"
+    }
   ],
   "highlights": [
-    { "value": -1, "note": "Another community is gone.I wanna live \"now\"." },
-    { "value": -1, "note": "" },
-    { "value": 3, "note": "I can know about me." }
+    {
+      "value": -1,
+      "note": "Another community is gone.I wanna live \"now\"."
+    },
+    {
+      "value": -1,
+      "note": ""
+    },
+    {
+      "value": 3,
+      "note": "I can know about me."
+    }
   ],
-  "condition": "Very Good"
+  "condition": "Very Good",
+  "ai": [
+    {
+      "perma": "E",
+      "summary": "Software practice and file workflow"
+    },
+    {
+      "perma": "M",
+      "summary": "Personal reflection session"
+    }
+  ]
 }
