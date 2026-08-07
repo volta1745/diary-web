@@ -1,0 +1,40 @@
+{
+  "date": "20260802",
+  "activity": [
+    {
+      "time": "2:00",
+      "label": "Hobby"
+    },
+    {
+      "time": "11:00",
+      "label": "Sleep"
+    },
+    {
+      "time": "11:45",
+      "label": "Life"
+    },
+    {
+      "time": "20:00",
+      "label": "Sleep"
+    },
+    {
+      "time": "21:30",
+      "label": "None"
+    },
+    {
+      "time": "23:00",
+      "label": "Life"
+    },
+    {
+      "time": "24:00",
+      "label": "Sleep"
+    }
+  ],
+  "perma": {
+    "P": 2,
+    "E": 1,
+    "R": 1,
+    "M": 1,
+    "A": 1
+  }
+}
