@@ -1,0 +1,77 @@
+{
+  "date": "20260813",
+  "activity": [
+    {
+      "time": "8:15",
+      "label": "Sleep"
+    },
+    {
+      "time": "8:30",
+      "label": "Life"
+    },
+    {
+      "time": "10:30",
+      "label": "Work",
+      "value": 1
+    },
+    {
+      "time": "11:30",
+      "label": "Work"
+    },
+    {
+      "time": "12:00",
+      "label": "Life"
+    },
+    {
+      "time": "13:30",
+      "label": "Work",
+      "value": 2
+    },
+    {
+      "time": "14:00",
+      "label": "Life"
+    },
+    {
+      "time": "15:00",
+      "label": "Work",
+      "value": 1
+    },
+    {
+      "time": "15:30",
+      "label": "Work",
+      "value": 0
+    },
+    {
+      "time": "16:00",
+      "label": "Hobby"
+    },
+    {
+      "time": "18:15",
+      "label": "Work",
+      "value": 1
+    },
+    {
+      "time": "20:30",
+      "label": "None"
+    },
+    {
+      "time": "22:00",
+      "label": "Hobby"
+    },
+    {
+      "time": "22:45",
+      "label": "Life"
+    },
+    {
+      "time": "24:00",
+      "label": "Sleep"
+    }
+  ],
+  "perma": {
+    "P": 1,
+    "E": 2,
+    "R": 1,
+    "M": 0,
+    "A": 1
+  }
+}

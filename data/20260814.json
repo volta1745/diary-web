@@ -1,0 +1,58 @@
+{
+  "date": "20260814",
+  "activity": [
+    {
+      "time": "8:45",
+      "label": "Sleep"
+    },
+    {
+      "time": "9:30",
+      "label": "Life"
+    },
+    {
+      "time": "10:45",
+      "label": "Work"
+    },
+    {
+      "time": "11:30",
+      "label": "Life"
+    },
+    {
+      "time": "12:45",
+      "label": "Transit"
+    },
+    {
+      "time": "16:00",
+      "label": "Work",
+      "value": 1
+    },
+    {
+      "time": "18:15",
+      "label": "Work",
+      "value": 2
+    },
+    {
+      "time": "19:30",
+      "label": "Transit"
+    },
+    {
+      "time": "21:45",
+      "label": "Life"
+    },
+    {
+      "time": "23:00",
+      "label": "None"
+    },
+    {
+      "time": "24:00",
+      "label": "Hobby"
+    }
+  ],
+  "perma": {
+    "P": 2,
+    "E": 2,
+    "R": 3,
+    "M": 3,
+    "A": 3
+  }
+}

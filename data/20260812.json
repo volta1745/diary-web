@@ -1,0 +1,55 @@
+{
+  "date": "20260812",
+  "activity": [
+    {
+      "time": "1:30",
+      "label": "Code"
+    },
+    {
+      "time": "5:45",
+      "label": "Sleep"
+    },
+    {
+      "time": "7:00",
+      "label": "Life"
+    },
+    {
+      "time": "12:00",
+      "label": "Work",
+      "value": 1
+    },
+    {
+      "time": "13:00",
+      "label": "Life"
+    },
+    {
+      "time": "18:15",
+      "label": "Work",
+      "value": 1
+    },
+    {
+      "time": "19:30",
+      "label": "Transit",
+      "note": "I must not sleep in the train!"
+    },
+    {
+      "time": "20:00",
+      "label": "Hobby"
+    },
+    {
+      "time": "21:45",
+      "label": "Life"
+    },
+    {
+      "time": "24:00",
+      "label": "Sleep"
+    }
+  ],
+  "perma": {
+    "P": 2,
+    "E": 2,
+    "R": 3,
+    "M": 2,
+    "A": 1
+  }
+}
