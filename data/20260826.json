@@ -1,0 +1,81 @@
+{
+  "date": "20260826",
+  "activity": [
+    {
+      "time": "7:15",
+      "label": "Sleep"
+    },
+    {
+      "time": "8:00",
+      "label": "Life"
+    },
+    {
+      "time": "10:30",
+      "label": "Work",
+      "value": 1
+    },
+    {
+      "time": "11:30",
+      "label": "Life"
+    },
+    {
+      "time": "12:00",
+      "label": "Transit"
+    },
+    {
+      "time": "12:30",
+      "label": "Code"
+    },
+    {
+      "time": "12:45",
+      "label": "Transit"
+    },
+    {
+      "time": "17:00",
+      "label": "Work",
+      "value": 1
+    },
+    {
+      "time": "18:15",
+      "label": "Work",
+      "value": 0
+    },
+    {
+      "time": "19:00",
+      "label": "Transit"
+    },
+    {
+      "time": "19:15",
+      "label": "Code"
+    },
+    {
+      "time": "19:30",
+      "label": "Transit"
+    },
+    {
+      "time": "21:00",
+      "label": "Life"
+    },
+    {
+      "time": "21:15",
+      "label": "Code",
+      "value": 2
+    },
+    {
+      "time": "21:30",
+      "label": "Code",
+      "value": 1
+    },
+    {
+      "time": "24:00",
+      "label": "Sleep"
+    }
+  ],
+  "perma": {
+    "P": 2,
+    "E": 2,
+    "R": 3,
+    "M": 2,
+    "A": 1
+  }
+}

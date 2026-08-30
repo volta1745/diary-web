@@ -1,0 +1,79 @@
+{
+  "date": "20260825",
+  "activity": [
+    {
+      "time": "8:00",
+      "label": "Sleep"
+    },
+    {
+      "time": "9:30",
+      "label": "Code",
+      "value": 1
+    },
+    {
+      "time": "10:00",
+      "label": "Code",
+      "value": 2
+    },
+    {
+      "time": "11:45",
+      "label": "Code"
+    },
+    {
+      "time": "12:30",
+      "label": "Hobby"
+    },
+    {
+      "time": "14:00",
+      "label": "Life"
+    },
+    {
+      "time": "15:30",
+      "label": "Code",
+      "value": 1
+    },
+    {
+      "time": "16:00",
+      "label": "Code",
+      "value": 0
+    },
+    {
+      "time": "16:30",
+      "label": "Hobby"
+    },
+    {
+      "time": "17:00",
+      "label": "Code",
+      "value": 1
+    },
+    {
+      "time": "17:30",
+      "label": "Life"
+    },
+    {
+      "time": "21:30",
+      "label": "Code",
+      "value": 1
+    },
+    {
+      "time": "22:00",
+      "label": "Life"
+    },
+    {
+      "time": "23:30",
+      "label": "None",
+      "note": "Can’t sleep"
+    },
+    {
+      "time": "24:00",
+      "label": "Sleep"
+    }
+  ],
+  "perma": {
+    "P": 1,
+    "E": 3,
+    "R": 0,
+    "M": 1,
+    "A": 2
+  }
+}
