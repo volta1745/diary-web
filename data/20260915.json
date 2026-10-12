@@ -1,0 +1,45 @@
+{
+  "date": "20260915",
+  "activity": [
+    {
+      "time": "7:30",
+      "label": "Sleep"
+    },
+    {
+      "time": "9:15",
+      "label": "Life"
+    },
+    {
+      "time": "12:00",
+      "label": "Work",
+      "value": 1
+    },
+    {
+      "time": "13:00",
+      "label": "Life"
+    },
+    {
+      "time": "15:30",
+      "label": "Work",
+      "value": 0
+    },
+    {
+      "time": "16:30",
+      "label": "Life"
+    },
+    {
+      "time": "18:30",
+      "label": "Work",
+      "value": 2
+    },
+    {
+      "time": "20:00",
+      "label": "Life"
+    },
+    {
+      "time": "24:00",
+      "label": "Sleep",
+      "note": "Failed "
+    }
+  ]
+}

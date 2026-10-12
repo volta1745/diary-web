@@ -1,0 +1,33 @@
+{
+  "date": "20261003",
+  "activity": [
+    {
+      "time": "8:00",
+      "label": "Life"
+    },
+    {
+      "time": "14:00",
+      "label": "Sleep"
+    },
+    {
+      "time": "20:00",
+      "label": "Life"
+    },
+    {
+      "time": "22:00",
+      "label": "Transit",
+      "note": "Hello new world, my castle!"
+    },
+    {
+      "time": "24:00",
+      "label": "Life"
+    }
+  ],
+  "perma": {
+    "P": 4,
+    "E": 4,
+    "R": 3,
+    "M": 4,
+    "A": 3
+  }
+}

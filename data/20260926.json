@@ -1,0 +1,30 @@
+{
+  "date": "20260926",
+  "activity": [
+    {
+      "time": "17:00",
+      "label": "Sleep",
+      "note": "Dead"
+    },
+    {
+      "time": "19:00",
+      "label": "Life"
+    },
+    {
+      "time": "19:30",
+      "label": "None"
+    },
+    {
+      "time": "24:00",
+      "label": "Go-out",
+      "note": "with a friend"
+    }
+  ],
+  "perma": {
+    "P": 1,
+    "E": 2,
+    "R": 3,
+    "M": 1,
+    "A": 0
+  }
+}

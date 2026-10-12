@@ -1,0 +1,58 @@
+{
+  "date": "20260927",
+  "activity": [
+    {
+      "time": "0:15",
+      "label": "Go-out",
+      "note": "with a friend"
+    },
+    {
+      "time": "1:00",
+      "label": "Life"
+    },
+    {
+      "time": "10:30",
+      "label": "Sleep"
+    },
+    {
+      "time": "11:00",
+      "label": "None"
+    },
+    {
+      "time": "13:30",
+      "label": "Life"
+    },
+    {
+      "time": "17:00",
+      "label": "None"
+    },
+    {
+      "time": "17:45",
+      "label": "Go-out"
+    },
+    {
+      "time": "20:00",
+      "label": "Life"
+    },
+    {
+      "time": "23:00",
+      "label": "Life",
+      "note": "Moving"
+    },
+    {
+      "time": "23:30",
+      "label": "None"
+    },
+    {
+      "time": "24:00",
+      "label": "Life"
+    }
+  ],
+  "perma": {
+    "P": 3,
+    "E": 2,
+    "R": 2,
+    "M": 0,
+    "A": 0
+  }
+}
