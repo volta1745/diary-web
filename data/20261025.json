@@ -1,0 +1,59 @@
+{
+  "date": "20261025",
+  "activity": [
+    {
+      "time": "1:00",
+      "label": "Hobby"
+    },
+    {
+      "time": "1:30",
+      "label": "None"
+    },
+    {
+      "time": "2:30",
+      "label": "Code",
+      "rating": 2
+    },
+    {
+      "time": "11:00",
+      "label": "Sleep"
+    },
+    {
+      "time": "12:30",
+      "label": "None",
+      "rating": -1
+    },
+    {
+      "time": "15:00",
+      "label": "Life"
+    },
+    {
+      "time": "17:00",
+      "label": "Code"
+    },
+    {
+      "time": "19:00",
+      "label": "Hobby"
+    },
+    {
+      "time": "20:00",
+      "label": "Life",
+      "rating": 1,
+      "events": [
+        "木製のラウンドテーブルが届いた"
+      ]
+    },
+    {
+      "time": "22:30",
+      "label": "Life"
+    },
+    {
+      "time": "23:45",
+      "label": "Hobby"
+    },
+    {
+      "time": "24:00",
+      "label": "Sleep"
+    }
+  ]
+}

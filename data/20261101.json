@@ -1,0 +1,79 @@
+{
+  "date": "20261101",
+  "badDay": true,
+  "activity": [
+    {
+      "time": "6:45",
+      "label": "Sleep"
+    },
+    {
+      "time": "8:15",
+      "label": "Life"
+    },
+    {
+      "time": "9:00",
+      "label": "Transit"
+    },
+    {
+      "time": "10:45",
+      "label": "Life",
+      "rating": 1,
+      "events": [
+        "住所変更"
+      ]
+    },
+    {
+      "time": "12:00",
+      "label": "Go-out"
+    },
+    {
+      "time": "15:00",
+      "label": "Go-out",
+      "rating": 1
+    },
+    {
+      "time": "16:00",
+      "label": "Go-out",
+      "rating": 2,
+      "events": [
+        "🏂買"
+      ]
+    },
+    {
+      "time": "17:30",
+      "label": "Go-out"
+    },
+    {
+      "time": "18:15",
+      "label": "Transit"
+    },
+    {
+      "time": "19:15",
+      "label": "Life"
+    },
+    {
+      "time": "20:00",
+      "label": "None"
+    },
+    {
+      "time": "21:45",
+      "label": "Code",
+      "rating": 1
+    },
+    {
+      "time": "22:15",
+      "label": "Life"
+    },
+    {
+      "time": "24:00",
+      "label": "Sleep"
+    }
+  ],
+  "perma": {
+    "P": 2,
+    "E": 3,
+    "R": 4,
+    "M": 3,
+    "A": 3
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "date": "20261017",
+  "activity": [
+    {
+      "time": "1:00",
+      "label": "Hobby"
+    },
+    {
+      "time": "10:00",
+      "label": "Sleep"
+    },
+    {
+      "time": "11:00",
+      "label": "Hobby"
+    },
+    {
+      "time": "13:00",
+      "label": "Life"
+    },
+    {
+      "time": "18:15",
+      "label": "Hobby"
+    },
+    {
+      "time": "19:15",
+      "label": "Life"
+    },
+    {
+      "time": "24:00",
+      "label": "Code",
+      "value": 1
+    }
+  ],
+  "perma": {
+    "P": 2,
+    "E": 2,
+    "R": 0,
+    "M": 2,
+    "A": 1
+  }
+}

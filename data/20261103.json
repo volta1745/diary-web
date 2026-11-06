@@ -1,0 +1,51 @@
+{
+  "date": "20261103",
+  "activity": [
+    {
+      "time": "1:00",
+      "label": "Hobby",
+      "rating": -2
+    },
+    {
+      "time": "2:00",
+      "label": "Life"
+    },
+    {
+      "time": "9:30",
+      "label": "Sleep"
+    },
+    {
+      "time": "13:00",
+      "label": "Life"
+    },
+    {
+      "time": "16:00",
+      "label": "Hobby"
+    },
+    {
+      "time": "19:00",
+      "label": "Code",
+      "rating": 2
+    },
+    {
+      "time": "20:00",
+      "label": "Life"
+    },
+    {
+      "time": "23:00",
+      "label": "Hobby",
+      "rating": 1,
+      "events": [
+        "🏂角度変え"
+      ]
+    },
+    {
+      "time": "23:45",
+      "label": "Life"
+    },
+    {
+      "time": "24:00",
+      "label": "Sleep"
+    }
+  ]
+}
