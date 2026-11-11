@@ -1,0 +1,68 @@
+{
+  "date": "20261110",
+  "activity": [
+    {
+      "time": "8:30",
+      "label": "Sleep"
+    },
+    {
+      "time": "8:45",
+      "label": "Life"
+    },
+    {
+      "time": "11:00",
+      "label": "Work"
+    },
+    {
+      "time": "11:30",
+      "label": "Work",
+      "rating": 2,
+      "events": [
+        "プレゼン無事完了！"
+      ]
+    },
+    {
+      "time": "12:00",
+      "label": "Work"
+    },
+    {
+      "time": "13:00",
+      "label": "Life"
+    },
+    {
+      "time": "13:30",
+      "label": "Work"
+    },
+    {
+      "time": "14:00",
+      "label": "Work",
+      "rating": -1,
+      "events": [
+        "何故私が一人で?"
+      ]
+    },
+    {
+      "time": "20:00",
+      "label": "Work"
+    },
+    {
+      "time": "22:00",
+      "label": "Life"
+    },
+    {
+      "time": "23:00",
+      "label": "None"
+    },
+    {
+      "time": "24:00",
+      "label": "Sleep"
+    }
+  ],
+  "perma": {
+    "P": 2,
+    "E": 2,
+    "R": 2,
+    "M": 3,
+    "A": 2
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "date": "20261106",
+  "activity": [
+    {
+      "time": "7:30",
+      "label": "Sleep"
+    },
+    {
+      "time": "8:45",
+      "label": "Life",
+      "rating": 1,
+      "events": [
+        "ピザトースト"
+      ]
+    },
+    {
+      "time": "9:30",
+      "label": "Work",
+      "rating": -2,
+      "events": [
+        "タスク管理ちゃんとやれ"
+      ]
+    },
+    {
+      "time": "11:00",
+      "label": "Work"
+    },
+    {
+      "time": "11:30",
+      "label": "Life"
+    },
+    {
+      "time": "12:45",
+      "label": "Transit"
+    },
+    {
+      "time": "15:00",
+      "label": "Work",
+      "rating": 2
+    },
+    {
+      "time": "15:45",
+      "label": "Work",
+      "rating": -1,
+      "events": [
+        "遅刻は私のせいではないが"
+      ]
+    },
+    {
+      "time": "18:30",
+      "label": "Work",
+      "rating": 1
+    },
+    {
+      "time": "23:00",
+      "label": "Work",
+      "rating": -1,
+      "events": [
+        "どこに居ても私ではない"
+      ]
+    },
+    {
+      "time": "24:00",
+      "label": "Transit"
+    }
+  ]
+}

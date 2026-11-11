@@ -1,0 +1,65 @@
+{
+  "date": "20261109",
+  "activity": [
+    {
+      "time": "0:30",
+      "label": "Care"
+    },
+    {
+      "time": "1:30",
+      "label": "Life",
+      "rating": 1,
+      "events": [
+        "🍣"
+      ]
+    },
+    {
+      "time": "2:00",
+      "label": "Life"
+    },
+    {
+      "time": "8:30",
+      "label": "Sleep"
+    },
+    {
+      "time": "8:45",
+      "label": "Life"
+    },
+    {
+      "time": "15:00",
+      "label": "Work",
+      "rating": 1,
+      "events": [
+        "集中力は⭕️精神△"
+      ]
+    },
+    {
+      "time": "15:30",
+      "label": "None",
+      "rating": -1,
+      "events": [
+        "ゴミになるな"
+      ]
+    },
+    {
+      "time": "21:45",
+      "label": "Work",
+      "rating": 2
+    },
+    {
+      "time": "23:00",
+      "label": "Life"
+    },
+    {
+      "time": "24:00",
+      "label": "Sleep"
+    }
+  ],
+  "perma": {
+    "P": 2,
+    "E": 2,
+    "R": 2,
+    "M": 2,
+    "A": 2
+  }
+}

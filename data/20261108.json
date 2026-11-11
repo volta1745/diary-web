@@ -1,0 +1,42 @@
+{
+  "date": "20261108",
+  "activity": [
+    {
+      "time": "9:30",
+      "label": "Sleep"
+    },
+    {
+      "time": "11:00",
+      "label": "None"
+    },
+    {
+      "time": "13:00",
+      "label": "Life"
+    },
+    {
+      "time": "16:30",
+      "label": "Hobby"
+    },
+    {
+      "time": "19:00",
+      "label": "Sleep"
+    },
+    {
+      "time": "19:45",
+      "label": "Life"
+    },
+    {
+      "time": "20:45",
+      "label": "Code",
+      "rating": 2
+    },
+    {
+      "time": "23:00",
+      "label": "Life"
+    },
+    {
+      "time": "24:00",
+      "label": "Hobby"
+    }
+  ]
+}

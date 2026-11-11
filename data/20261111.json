@@ -1,0 +1,82 @@
+{
+  "date": "20261111",
+  "activity": [
+    {
+      "time": "5:00",
+      "label": "Sleep"
+    },
+    {
+      "time": "5:15",
+      "label": "Hobby"
+    },
+    {
+      "time": "6:45",
+      "label": "Life"
+    },
+    {
+      "time": "8:30",
+      "label": "Transit"
+    },
+    {
+      "time": "11:00",
+      "label": "Work",
+      "rating": 1
+    },
+    {
+      "time": "12:00",
+      "label": "Work",
+      "rating": -1,
+      "events": [
+        "頑張った割には無意味"
+      ]
+    },
+    {
+      "time": "13:00",
+      "label": "Life"
+    },
+    {
+      "time": "14:00",
+      "label": "Work"
+    },
+    {
+      "time": "16:00",
+      "label": "Work",
+      "rating": -1,
+      "events": [
+        "場当たりテスト　つまらんし時間かかりすぎ"
+      ]
+    },
+    {
+      "time": "18:30",
+      "label": "Work",
+      "rating": -2,
+      "events": [
+        "まじこんな人材どないすんの？"
+      ]
+    },
+    {
+      "time": "19:15",
+      "label": "Work"
+    },
+    {
+      "time": "21:00",
+      "label": "Transit"
+    },
+    {
+      "time": "22:30",
+      "label": "Life"
+    },
+    {
+      "time": "24:00",
+      "label": "Code",
+      "rating": 1
+    }
+  ],
+  "perma": {
+    "P": 1,
+    "E": 1,
+    "R": 3,
+    "M": 2,
+    "A": 1
+  }
+}
