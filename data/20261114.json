@@ -1,0 +1,89 @@
+{
+  "date": "20261114",
+  "activity": [
+    {
+      "time": "1:15",
+      "label": "Hobby"
+    },
+    {
+      "time": "9:30",
+      "label": "Sleep"
+    },
+    {
+      "time": "10:15",
+      "label": "Hobby"
+    },
+    {
+      "time": "11:15",
+      "label": "Life"
+    },
+    {
+      "time": "12:15",
+      "label": "Code",
+      "events": [
+        "本って難しい"
+      ]
+    },
+    {
+      "time": "13:30",
+      "label": "Hobby",
+      "rating": 1,
+      "events": [
+        "🌳"
+      ]
+    },
+    {
+      "time": "14:15",
+      "label": "Sleep",
+      "rating": -1,
+      "events": [
+        "ぼーっと"
+      ]
+    },
+    {
+      "time": "15:15",
+      "label": "Hobby"
+    },
+    {
+      "time": "16:00",
+      "label": "Code",
+      "events": [
+        "修正"
+      ]
+    },
+    {
+      "time": "19:30",
+      "label": "Sleep"
+    },
+    {
+      "time": "20:15",
+      "label": "Hobby"
+    },
+    {
+      "time": "22:00",
+      "label": "Life"
+    },
+    {
+      "time": "22:45",
+      "label": "Code",
+      "rating": 1,
+      "events": [
+        "世界一流エンジニアの思考法"
+      ]
+    },
+    {
+      "time": "24:00",
+      "label": "Hobby",
+      "events": [
+        "リッチマンプアウーマン"
+      ]
+    }
+  ],
+  "perma": {
+    "P": 2,
+    "E": 1,
+    "R": 1,
+    "M": 2,
+    "A": 2
+  }
+}
