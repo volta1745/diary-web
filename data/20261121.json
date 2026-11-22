@@ -1,0 +1,75 @@
+{
+  "date": "20261121",
+  "activity": [
+    {
+      "time": "0:45",
+      "label": "Hobby"
+    },
+    {
+      "time": "9:30",
+      "label": "Sleep",
+      "events": [
+        "危なかった"
+      ]
+    },
+    {
+      "time": "11:00",
+      "label": "Hobby"
+    },
+    {
+      "time": "12:30",
+      "label": "Life"
+    },
+    {
+      "time": "13:00",
+      "label": "Hobby"
+    },
+    {
+      "time": "13:45",
+      "label": "Life"
+    },
+    {
+      "time": "15:45",
+      "label": "Hobby",
+      "rating": 1,
+      "events": [
+        "🌳"
+      ]
+    },
+    {
+      "time": "17:45",
+      "label": "Hobby"
+    },
+    {
+      "time": "19:00",
+      "label": "Hobby",
+      "events": [
+        "ドラマ"
+      ]
+    },
+    {
+      "time": "21:00",
+      "label": "Hobby"
+    },
+    {
+      "time": "23:00",
+      "label": "Sleep",
+      "rating": -1,
+      "events": [
+        "Failed"
+      ]
+    },
+    {
+      "time": "23:30",
+      "label": "Life"
+    },
+    {
+      "time": "24:00",
+      "label": "Sleep",
+      "rating": -1,
+      "events": [
+        "気絶？"
+      ]
+    }
+  ]
+}

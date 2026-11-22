@@ -1,0 +1,101 @@
+{
+  "date": "20261116",
+  "activity": [
+    {
+      "time": "0:30",
+      "label": "Hobby"
+    },
+    {
+      "time": "1:30",
+      "label": "Hobby",
+      "rating": -1
+    },
+    {
+      "time": "2:00",
+      "label": "Sleep",
+      "rating": 1,
+      "events": [
+        "また別世界な感覚"
+      ]
+    },
+    {
+      "time": "8:00",
+      "label": "Sleep"
+    },
+    {
+      "time": "9:00",
+      "label": "Life"
+    },
+    {
+      "time": "11:30",
+      "label": "Work"
+    },
+    {
+      "time": "13:00",
+      "label": "Work",
+      "rating": 1,
+      "events": [
+        "AI < 人間。まだギリギリ"
+      ]
+    },
+    {
+      "time": "15:00",
+      "label": "Work"
+    },
+    {
+      "time": "15:30",
+      "label": "Work",
+      "rating": 1,
+      "events": [
+        "行き当たりばったりにしては良さげ"
+      ]
+    },
+    {
+      "time": "16:30",
+      "label": "Work",
+      "rating": 2
+    },
+    {
+      "time": "18:00",
+      "label": "Work"
+    },
+    {
+      "time": "20:15",
+      "label": "Work",
+      "rating": -1,
+      "events": [
+        "頑張ったけどそれよりつまらない"
+      ]
+    },
+    {
+      "time": "22:00",
+      "label": "Life"
+    },
+    {
+      "time": "22:30",
+      "label": "Care",
+      "events": [
+        "Coffee"
+      ]
+    },
+    {
+      "time": "23:00",
+      "label": "Code"
+    },
+    {
+      "time": "23:30",
+      "label": "Hobby",
+      "events": [
+        "ぐだぐだ"
+      ]
+    },
+    {
+      "time": "24:00",
+      "label": "Care",
+      "rating": 2,
+      "events": [
+        "モンク"
+      ]
+    }
+  ]
+}

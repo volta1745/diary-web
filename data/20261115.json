@@ -1,0 +1,97 @@
+{
+  "date": "20261115",
+  "activity": [
+    {
+      "time": "0:15",
+      "label": "Hobby"
+    },
+    {
+      "time": "2:00",
+      "label": "Hobby",
+      "rating": 1,
+      "events": [
+        "書き物"
+      ]
+    },
+    {
+      "time": "2:30",
+      "label": "Care",
+      "rating": 1
+    },
+    {
+      "time": "3:30",
+      "label": "Life"
+    },
+    {
+      "time": "4:45",
+      "label": "Hobby"
+    },
+    {
+      "time": "5:00",
+      "label": "Life"
+    },
+    {
+      "time": "5:45",
+      "label": "Hobby"
+    },
+    {
+      "time": "11:00",
+      "label": "Sleep"
+    },
+    {
+      "time": "12:00",
+      "label": "Hobby",
+      "rating": -2,
+      "events": [
+        "ぐだぐだ無駄なショート"
+      ]
+    },
+    {
+      "time": "12:30",
+      "label": "Hobby",
+      "rating": 1,
+      "events": [
+        "🌳"
+      ]
+    },
+    {
+      "time": "13:00",
+      "label": "Life"
+    },
+    {
+      "time": "14:45",
+      "label": "Hobby",
+      "events": [
+        "ぐだ"
+      ]
+    },
+    {
+      "time": "18:15",
+      "label": "Sleep"
+    },
+    {
+      "time": "18:30",
+      "label": "Hobby"
+    },
+    {
+      "time": "19:30",
+      "label": "None",
+      "rating": -2
+    },
+    {
+      "time": "20:45",
+      "label": "Code"
+    },
+    {
+      "time": "23:15",
+      "label": "Hobby"
+    },
+    {
+      "time": "24:00",
+      "label": "Hobby",
+      "events": [
+        "🌳"
+      ]
+    }
+  ]
+}

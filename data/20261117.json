@@ -1,0 +1,63 @@
+{
+  "date": "20261117",
+  "activity": [
+    {
+      "time": "8:00",
+      "label": "Sleep"
+    },
+    {
+      "time": "8:30",
+      "label": "Life"
+    },
+    {
+      "time": "12:00",
+      "label": "Work"
+    },
+    {
+      "time": "13:30",
+      "label": "Work",
+      "rating": 1
+    },
+    {
+      "time": "14:00",
+      "label": "Work",
+      "rating": 2,
+      "events": [
+        "進歩"
+      ]
+    },
+    {
+      "time": "14:30",
+      "label": "Work"
+    },
+    {
+      "time": "15:00",
+      "label": "Life"
+    },
+    {
+      "time": "15:45",
+      "label": "Work",
+      "rating": 1,
+      "events": [
+        "時間の使い方上手"
+      ]
+    },
+    {
+      "time": "18:15",
+      "label": "Work"
+    },
+    {
+      "time": "21:15",
+      "label": "Work",
+      "rating": 1
+    },
+    {
+      "time": "23:00",
+      "label": "Life"
+    },
+    {
+      "time": "24:00",
+      "label": "Sleep"
+    }
+  ]
+}

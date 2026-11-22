@@ -1,0 +1,68 @@
+{
+  "date": "20261118",
+  "activity": [
+    {
+      "time": "5:30",
+      "label": "Sleep"
+    },
+    {
+      "time": "6:45",
+      "label": "Life"
+    },
+    {
+      "time": "8:30",
+      "label": "Transit"
+    },
+    {
+      "time": "13:15",
+      "label": "Work",
+      "rating": 1
+    },
+    {
+      "time": "14:15",
+      "label": "Life"
+    },
+    {
+      "time": "16:45",
+      "label": "Work",
+      "rating": 2,
+      "events": [
+        "集中力行動力◎"
+      ]
+    },
+    {
+      "time": "18:15",
+      "label": "Transit"
+    },
+    {
+      "time": "19:00",
+      "label": "Hobby",
+      "events": [
+        "散歩"
+      ]
+    },
+    {
+      "time": "22:00",
+      "label": "Hobby",
+      "rating": 1,
+      "events": [
+        "🎵"
+      ]
+    },
+    {
+      "time": "23:00",
+      "label": "Transit"
+    },
+    {
+      "time": "24:00",
+      "label": "Life"
+    }
+  ],
+  "perma": {
+    "P": 3,
+    "E": 4,
+    "R": 1,
+    "M": 4,
+    "A": 2
+  }
+}

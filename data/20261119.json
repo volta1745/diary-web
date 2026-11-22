@@ -1,0 +1,85 @@
+{
+  "date": "20261119",
+  "activity": [
+    {
+      "time": "0:30",
+      "label": "Life"
+    },
+    {
+      "time": "8:00",
+      "label": "Sleep"
+    },
+    {
+      "time": "8:30",
+      "label": "Life"
+    },
+    {
+      "time": "10:00",
+      "label": "Work"
+    },
+    {
+      "time": "10:30",
+      "label": "Work",
+      "rating": 2,
+      "events": [
+        "会話頑張った"
+      ]
+    },
+    {
+      "time": "11:00",
+      "label": "Work",
+      "rating": 1
+    },
+    {
+      "time": "12:00",
+      "label": "Work"
+    },
+    {
+      "time": "12:30",
+      "label": "Life"
+    },
+    {
+      "time": "14:00",
+      "label": "Work"
+    },
+    {
+      "time": "15:30",
+      "label": "Work",
+      "rating": -1,
+      "events": [
+        "回避型"
+      ]
+    },
+    {
+      "time": "18:30",
+      "label": "Work"
+    },
+    {
+      "time": "20:30",
+      "label": "Life"
+    },
+    {
+      "time": "21:00",
+      "label": "Hobby",
+      "rating": -2,
+      "events": [
+        "ショート危ない"
+      ]
+    },
+    {
+      "time": "24:00",
+      "label": "Sleep",
+      "rating": -1,
+      "events": [
+        "現実逃避"
+      ]
+    }
+  ],
+  "perma": {
+    "P": 1,
+    "E": 1,
+    "R": 2,
+    "M": 2,
+    "A": 0
+  }
+}
